@@ -1,6 +1,6 @@
 # Greater Côa Valley Natural History Illustration Strategy — August 2026
 
-**Solo field illustrator project for Rewilding Portugal**
+**[Solo field illustrator project for Rewilding Portugal*](https://docs.google.com/document/d/1wNyYlElJhagsg_7NNhoL7V2yz-BWiEKrkB091rVS1sM/edit?usp=sharing)*
 
 ## Project Overview
 
