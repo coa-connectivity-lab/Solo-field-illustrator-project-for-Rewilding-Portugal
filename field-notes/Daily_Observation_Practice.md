@@ -63,17 +63,22 @@ These repeated visits create a visual baseline that supports the three principal
 
 ## Suggested Integration into Phase 1
 
-| Date   | Activity                                           |
-| ------ | -------------------------------------------------- |
-| 11 Aug | Arrival, Almeida orientation, fortress walk        |
-| 12 Aug | Remote work + Ponte Grande / Rio Côa sketch walk   |
-| 13 Aug | Paul de Toirões guided visit                       |
-| 14 Aug | Remote work + evening Côa river study              |
-| 15 Aug | Vale Carapito reconnaissance                       |
-| 16 Aug | Ribeira do Mosteiro landscape study                |
-| 17 Aug | Ribeira do Mosteiro + Almeida sunset sketches      |
-| 18 Aug | Sketch consolidation + local river walk            |
-| 19 Aug | Preparation day + final local reference collection |
+## Suggested Integration into Phase 1 and Field Residency
+
+Field activities are concentrated during approved leave periods. Remote-work days are reserved for local observation, sketch consolidation, photography review, and project organisation.
+
+| Date | Activity |
+|------|----------|
+| 11 Aug | Arrival, Almeida orientation, fortress walk, local landscape familiarisation |
+| 12–19 Aug | Remote work period + short evening observation walks around Almeida, Rio Côa, and Ponte Grande when possible. Focus on thumbnail sketches, light studies, ecological notes, and reference organisation |
+| 20–21 Aug | **Field residency — Vale Carapito priority visit**. Landscape reconnaissance, Sorraia horse observations (if visible), woodland/meadow studies, ecological process documentation |
+| 24–28 Aug | **Main field residency period** |
+| 24 Aug | Paul de Toirões guided visit — wetland restoration study, aquatic vegetation, habitat documentation |
+| 25 Aug | Vale Carapito return visit — focused landscape composition and supporting studies |
+| 26 Aug | Ribeira do Mosteiro landscape study — valley structure, cliffs, stream, Mediterranean vegetation |
+| 27 Aug | Flexible field day — revisit priority location depending on weather, light, and previous observations |
+| 28 Aug | Final field documentation, reference organisation, preparation for departure |
+| 31 Aug–1 Sept | Optional additional field window — final sketches, missing references, Almeida/Rio Côa local studies, or return visit to priority site |
 
 
 ## Ecological Role Within the Project
