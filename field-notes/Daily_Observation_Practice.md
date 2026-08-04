@@ -65,21 +65,35 @@ These repeated visits create a visual baseline that supports the three principal
 
 ## Suggested Integration into Phase 1 and Field Residency
 
-Field activities are concentrated during approved leave periods. Remote-work days are reserved for local observation, sketch consolidation, photography review, and project organisation.
+Field activities are concentrated around approved leave periods, with additional reconnaissance days scheduled where possible. Remote-work days are reserved for local observation, sketch consolidation, photography review, field-note organisation, and project development.
 
-| Date | Activity |
-|------|----------|
-| 11 Aug | Arrival, Almeida orientation, fortress walk, local landscape familiarisation |
-| 12–19 Aug | Remote work period + short evening observation walks around Almeida, Rio Côa, and Ponte Grande when possible. Focus on thumbnail sketches, light studies, ecological notes, and reference organisation |
-| 20–21 Aug | **Field residency — Vale Carapito priority visit**. Landscape reconnaissance, Sorraia horse observations (if visible), woodland/meadow studies, ecological process documentation |
-| 24–28 Aug | **Main field residency period** |
-| 24 Aug | Paul de Toirões guided visit — wetland restoration study, aquatic vegetation, habitat documentation |
-| 25 Aug | Vale Carapito return visit — focused landscape composition and supporting studies |
-| 26 Aug | Ribeira do Mosteiro landscape study — valley structure, cliffs, stream, Mediterranean vegetation |
-| 27 Aug | Flexible field day — revisit priority location depending on weather, light, and previous observations |
-| 28 Aug | Final field documentation, reference organisation, preparation for departure |
-| 31 Aug–1 Sept | Optional additional field window — final sketches, missing references, Almeida/Rio Côa local studies, or return visit to priority site |
+## Suggested Integration into Phase 1 and Field Residency
 
+Field activities are concentrated around approved leave periods, with additional reconnaissance days scheduled where possible. Remote-work days are reserved for local observation, sketch consolidation, photography review, field-note organisation, and project development.
+
+| Date | Day | Activity |
+|------|-----|----------|
+| 10 Aug | Monday | **Training day** — no field activities. On leave Stay over in Spain |
+| 11 Aug | Tuesday | **Training day** — no field activities. On leave arrive at Almeida |
+| 12 Aug | Wednesday | Remote work period + short local observation walks around Almeida, Rio Côa, and Ponte Grande when possible. Focus on thumbnail sketches, light studies, ecological notes, and reference organisation |
+| 13 Aug | Thursday | Remote work + local landscape studies, photography review, and project organisation |
+| 14 Aug | Friday | Remote work + local observation, sketch consolidation, preparation for reconnaissance field days |
+| 15 Aug | Saturday | **Merujes do Paulo e André full-day reconnaissance** — landscape exploration, ecological connectivity study, built landscape observations, and illustration reference collection |
+| 16 Aug | Sunday | **Paul de Toirões connectivity reconnaissance** — landscape transect, built environment assessment, habitat fragmentation study, and ecological context documentation |
+| 17 Aug | Monday | **Training day** — no field activities. Remote work limited to project organisation and preparation |
+| 18 Aug | Tuesday | **Training day** — no field activities. Remote work limited to image review, field-note organisation, and preparation for Vale Carapito |
+| 19 Aug | Wednesday | **Vale Carapito connectivity reconnaissance** — landscape transect, habitat connectivity, human-landscape interaction, and ecological reference collection |
+| 20 Aug | Thursday | **Approved leave — Vale Carapito focused field residency** — Movement theme study: Sorraia horse observations (if visible), grazing dynamics, woodland/meadow relationships, and main illustration composition development |
+| 21 Aug | Friday | **Approved leave — Vale Carapito follow-up / focused illustration day** — detailed sketches, species studies, strongest viewpoints, and reference completion |
+| 22 Aug | Saturday | Remote work + drawing consolidation, reference organisation, illustration development |
+| 23 Aug | Sunday | Remote work + flexible local observation if needed, preparation for main residency block |
+| 24 Aug | Monday | **Approved leave — Paul de Toirões return visit** — wetland restoration study, aquatic vegetation, habitat documentation, and missing reference collection |
+| 25 Aug | Tuesday | **Approved leave — Vale Carapito return visit** — focused landscape composition, supporting studies, and refinement of the Movement narrative |
+| 26 Aug | Wednesday | **Approved leave — Ribeira do Mosteiro landscape study** — valley structure, cliffs, stream, Mediterranean vegetation, and Connection theme |
+| 27 Aug | Thursday | **Approved leave — flexible field correction day** — revisit priority location depending on weather, light conditions, and previous observations |
+| 28 Aug | Friday | **Approved leave — final field documentation, reference organisation, archive preparation, and departure preparation |
+| 31 Aug | Monday | Optional additional field window — final sketches, missing references, Almeida/Rio Côa local studies, or return visit to priority location |
+| 1 Sept | Tuesday | Optional additional field window — final field corrections, archive completion, and departure preparation |
 
 ## Ecological Role Within the Project
 
