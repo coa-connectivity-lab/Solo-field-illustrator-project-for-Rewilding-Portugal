@@ -1,0 +1,31 @@
+# installers, never belong in git
+*.exe
+*.msi
+*.dmg
+*.pkg
+
+# ArcGIS Pro install/training material
+ArcGIS_Pro/
+
+# reference PDFs and course material, not project output
+storyMaps/RCMRD/
+storyMaps/*.pdf
+survey123/*design*.pdf
+
+# environments
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# large geospatial data
+*.tif
+*.tiff
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.img
+
+# OS junk
+.DS_Store
