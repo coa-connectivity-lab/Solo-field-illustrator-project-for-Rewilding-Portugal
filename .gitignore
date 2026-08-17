@@ -1,0 +1,70 @@
+# --- Large geospatial data formats ---
+# Vector data
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.qix
+*.gpkg
+*.gdb/
+*.geojson
+*.dxf
+*.dwg
+*.kml
+*.kmz
+*.gpx
+
+# Raster data
+*.tif
+*.tiff
+*.img
+*.jp2
+*.ecw
+*.asc
+*.dem
+*.hgt
+
+# Raster/world-file sidecars (small on their own, but always paired with the raster above)
+*.tfw
+*.pgw
+*.jgw
+*.aux.xml
+
+# Point clouds
+*.las
+*.laz
+*.e57
+
+# Tiled / packaged data
+*.mbtiles
+*.pmtiles
+*.gpkg-wal
+*.gpkg-shm
+
+# QGIS project backups and auxiliary files (keep the .qgz/.qgs project itself, drop the rest)
+*.qgz~
+*.qgs~
+*~
+*.gpkg-journal
+
+# --- General project hygiene ---
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editors / environments
+.vscode/
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Archives (often used to bundle raw exports/exports of the above)
+*.zip
+*.7z
+
+# Large reference material and course PDFs (not project output)
+storyMaps/*.pdf
+survey123/*design*.pdf
+GeoAI/**/*.pdf
