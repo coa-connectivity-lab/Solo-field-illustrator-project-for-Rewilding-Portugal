@@ -18,7 +18,7 @@ Progress so far
 
 Remaining
 
-(i) Paul de Toirões, Water. Wetland/marsh site, standing water and wetland connectivity rather than river channel and weirs. **Personal visit planned this weekend, 22-23 August 2026.** Official Rewilding Portugal guided walk also scheduled 29 Aug, 18h-20h, guide Fernando Romão (Wildlife Portugal) — per `survey123/4-Field-Trips.jpg`.
+(i) Paul de Toirões, Water. Wetland/marsh site, standing water and wetland connectivity rather than river channel and weirs. **Personal visit planned this weekend, 22 August 2026.** Official Rewilding Portugal guided walk also scheduled 29 Aug, 18h-20h, guide Fernando Romão (Wildlife Portugal) — per `survey123/4-Field-Trips.jpg`.
 
 (ii) Vale Carapito, Movement. Sorraia horses and Tauros cattle, grazer and dung beetle field observations against the Endangered Landscapes Programme's reintroduction numbers. Official Rewilding Portugal guided walk scheduled 12 Sept, 18h-20h, guide Samuel Ribeiro (Beir'Aja) — per `survey123/4-Field-Trips.jpg`. **Personal visit planned this weekend, 23 August 2026.** 
 
