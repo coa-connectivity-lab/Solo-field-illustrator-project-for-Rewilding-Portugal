@@ -1,5 +1,6 @@
 Field trip plan, Greater Côa Valley residence
-Linda Angulo Lopez, updated 11 August 2026
+
+Linda Angulo Lopez, updated 21 August 2026
 
 Approach
 
@@ -7,21 +8,25 @@ Alternating field and consolidation days, rather than a fixed calendar set in ad
 
 Progress so far
 
-(i) Río Côa, mouth to Almeida, explored.
+(i) Río Côa, mouth to Almeida, explored — Pontão Manuel José weir/battlefield section (11 Aug, `field-trips/2026-0811-5PM.md`); Nascente do Rio Côa/Fóios pine forest and the Fóios stone-bridge headwater stream (12 Aug, `field-trips/2026-08-12-Pine-Forest.md`, `field-trips/2026-08-12-stone-bridge.md`); Praia Fluvial de Vale das Éguas (16 Aug) and Praia Fluvial do Côa, Rapoula (17 Aug).
 
-(ii) Prehistoric rock engravings, visited.
+(ii) Prehistoric rock engravings, visited — Penascosa rock art panels, Vale do Côa Archaeological Park (15 Aug, `field-trips/2026-08-15-Coa-Gravures-Penascosa.md`).
+
+(iii) Supplementary sites, opportunistic — Lageosa horses near Sabugal, unconfirmed Sorraia phenotype and explicitly *not* one of the two official reintroduction sites (12 Aug, `field-trips/2026-08-12-horses.md`); penned donkeys near Aldeia da Ponte, working enclosure not a rewilding site (12 Aug, `field-trips/2026-08-12-penned-donkeys.md`); Amoreira/Castelo Mendo wildfire damage (16 Aug, `field-trips/2026-08-16-Wildfire-Damage-Amoreira-Castelo-Mendo.md`).
+
+(iv) Porto, 20-21 August 2026, Douro comparison — **done**. Full write-up in `field-trips/2026-08-20-Porto-Duro.md`: the Miradouro São Leonardo de Galafura dam viewpoint (dam identity inferred, not directly photographed — still an open item below), the Douro Estuary Nature Reserve, and Praia da Madalena on the Atlantic coast.
 
 Remaining
 
-(i) Vale Carapito, Movement. Sorraia horses and Tauros cattle, grazer and dung beetle field observations against the Endangered Landscapes Programme's reintroduction numbers.
+(i) Paul de Toirões, Water. Wetland/marsh site, standing water and wetland connectivity rather than river channel and weirs. **Personal visit planned this weekend, 22-23 August 2026.** Official Rewilding Portugal guided walk also scheduled 29 Aug, 18h-20h, guide Fernando Romão (Wildlife Portugal) — per `survey123/4-Field-Trips.jpg`.
 
-(ii) Paul de Toirões, Water. Wetland/marsh site, standing water and wetland connectivity rather than river channel and weirs.
+(ii) Vale Carapito, Movement. Sorraia horses and Tauros cattle, grazer and dung beetle field observations against the Endangered Landscapes Programme's reintroduction numbers. Official Rewilding Portugal guided walk scheduled 12 Sept, 18h-20h, guide Samuel Ribeiro (Beir'Aja) — per `survey123/4-Field-Trips.jpg`. **Personal visit planned this weekend, 23 August 2026.** 
 
-(iii) Ribeira do Mosteiro, Connection. Closing site, ties Movement and Water back together, natural home for the corridor-fragmentation argument drawn from Rewilding Portugal's SOPHIA position.
+(iII) Ermo das Águias — **personal visit planned Wednesday-Thursday, 26 August 2026.** The other official Sorraia horse/Tauros reintroduction site (alongside Vale Carapito), not one of the original three plates but directly relevant to the Movement theme. Official Rewilding Portugal guided walk also scheduled 20 Sept, 9h-11h30, guide Marco Ferraz (AmbiEduca) — per `survey123/4-Field-Trips.jpg`.
 
-(iv) Porto, 20-21 August 2026, Douro comparison. Comparing the Douro's history of damming and hydroelectric development against the Côa's civil-society fight to stop a dam and save the rock art, and against the still-open Ensecadeiras do Côa removal case. Political detail to verify against a primary source before writing it up, not yet confirmed beyond the general shape of the story.
+(iv) Ribeira do Mosteiro, Connection. Closing site, ties Movement and Water back together, natural home for the corridor-fragmentation argument drawn from Rewilding Portugal's SOPHIA position. Official Rewilding Portugal guided walk scheduled 6 Sept, 9h-11h30, Calçada de Alpájares, guide Fernando Romão (Wildlife Portugal) — per `survey123/4-Field-Trips.jpg`.
+**personal visit planned Wednesday-Thursday, 27 August 2026.** 
 
-Open items
 
-- Confirm which order Porto sits in relative to the three plates, opening frame or closing payoff.
-- Verify the specific political history of the stopped Côa dam before drafting that section.
+
+

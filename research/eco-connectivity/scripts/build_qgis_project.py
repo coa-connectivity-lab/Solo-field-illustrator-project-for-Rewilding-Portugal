@@ -27,6 +27,8 @@ from qgis.PyQt.QtGui import QColor
 ECO_DIR = Path(__file__).resolve().parent.parent
 RASTER_DIR = ECO_DIR / "output" / "rasters"
 PROCESSED_DIR = ECO_DIR / "data" / "processed"
+COVARIATE_DIR = PROCESSED_DIR / "covariates"
+RESISTANCE_DIR = PROCESSED_DIR / "resistance"
 QGIS_OUT = ECO_DIR / "qgis" / "coa_eco_connectivity_ecotourism.qgz"
 
 qgs = QgsApplication([], False)
@@ -99,6 +101,19 @@ def style_points(layer, color, size=3):
     layer.triggerRepaint()
 
 
+def style_fire_raster(layer):
+    provider = layer.dataProvider()
+    stats = provider.bandStatistics(1)
+    ramp = QgsStyle.defaultStyle().colorRamp("YlOrRd")
+    shader = QgsColorRampShader(stats.minimumValue, stats.maximumValue, ramp, QgsColorRampShader.Interpolated)
+    shader.classifyColorRamp(6, -1)
+    raster_shader = QgsRasterShader()
+    raster_shader.setRasterShaderFunction(shader)
+    renderer = QgsSingleBandPseudoColorRenderer(provider, 1, raster_shader)
+    layer.setRenderer(renderer)
+    layer.setOpacity(0.85)
+
+
 def style_hunting_zones(layer):
     categories = []
     colors = {"ZCM": "#fdae61", "ZCA": "#abd9e9", "ZCT": "#d7191c"}
@@ -139,12 +154,24 @@ def main():
     ]:
         add_raster(RASTER_DIR / f"{name}.tif", label, grp_tradeoff)
 
+    print("Fire history (barrier to land restoration, v2 addition):")
+    grp_fire = root.addGroup("Fire history")
+    fire = add_raster(COVARIATE_DIR / "fire_last_burn_year.tif", "Most recent burn year (MODIS MCD64A1, real data)", grp_fire, style_connectivity=False)
+    if fire:
+        style_fire_raster(fire)
+    fire_effect = add_raster(RESISTANCE_DIR / "land_resistance_no_fire.tif", "Land resistance without fire penalty (diagnostic)", grp_fire, style_connectivity=False)
+    if fire_effect:
+        style_connectivity_raster(fire_effect, reversed_ramp=False)
+
     print("Base context:")
     grp_base = root.addGroup("Base context")
-    river = add_vector(PROCESSED_DIR / "study_area.gpkg", "coa_river", "Côa river", grp_base)
+    river = add_vector(PROCESSED_DIR / "study_area.gpkg", "coa_river", "Côa river (OSM mainstem)", grp_base)
     if river:
         style_outline(river, "#2166ac", 1.2)
-    area = add_vector(PROCESSED_DIR / "study_area.gpkg", "study_area", "Study area (30km)", grp_base)
+    tributaries = add_vector(PROCESSED_DIR / "study_area.gpkg", "coa_catchment_rivers", "Traced tributary network (HydroRIVERS)", grp_base)
+    if tributaries:
+        style_outline(tributaries, "#67a9cf", 0.5)
+    area = add_vector(PROCESSED_DIR / "study_area.gpkg", "study_area", "Study area (30km buffer + traced catchment)", grp_base)
     if area:
         style_outline(area, "black", 1.0)
     natura = add_vector(PROCESSED_DIR / "hydrology_and_protected_areas.gpkg", "natura2000", "Natura 2000", grp_base)
