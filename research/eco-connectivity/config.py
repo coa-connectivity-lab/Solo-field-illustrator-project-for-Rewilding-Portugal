@@ -57,7 +57,8 @@ for _d in (DATA_RAW, DATA_PROCESSED, OUTPUT_RASTERS, OUTPUT_MAPS, OUTPUT_TABLES)
     _d.mkdir(parents=True, exist_ok=True)
 
 # Field data (this project's own Survey123 export + field-trip notes)
-SURVEY123_FGDB_ZIP = THIS_REPO / "geoData" / "FGDB.zip"
+SURVEY123_FGDB_ZIP = THIS_REPO / "geoData" / "FGDB.zip"  # superseded by the CSV export below (kept for provenance)
+SURVEY123_CSV_ZIP = THIS_REPO / "geoData" / "CSV.zip"
 COA_RIVER_GPKG = (
     THIS_REPO
     / "research"
@@ -181,6 +182,31 @@ FIRE_HISTORY_END = "2025-12-31"     # history" framing of the annual review's 20
 FIRE_RESISTANCE_MAX_PENALTY = 60.0   # added to base resistance for a cell burned in FIRE_HISTORY_END's year
 FIRE_RESISTANCE_MIN_PENALTY = 10.0   # added for a cell last burned at the start of the window
 FIRE_RESISTANCE_CEILING = 100.0      # same ceiling as the existing Prima et al. Eq.1 resistance range
+
+# ── Survey123 field barriers (v3 addition) ──────────────────────────────────
+
+# Which functional group(s) a Survey123 barrier_observations `barrier_type` value
+# resists, applied per-group in build_resistance_surfaces.py's barrier_penalty().
+# Terrestrial infrastructure -> land only; Dam/Weir/Culvert -> water only (fills the
+# gap build_tradeoff_maps.py's own docstring names about no dedicated dam/weir point
+# layer existing); Bridge -> both, since a bridge is barrier-relevant to a land animal
+# crossing a river channel and to a water species whose channel it spans.
+BARRIER_TYPE_TO_GROUPS = {
+    "Fence": ["land"], "Agricultural boundary": ["land"], "Urban edge": ["land"],
+    "Road": ["land"], "Motorway": ["land"],
+    "Dam": ["water"], "Weir": ["water"], "Culvert": ["water"],
+    "Bridge": ["land", "water"],
+}
+BARRIER_PERMEABILITY_PENALTY = {"Fully blocking": 70.0, "Partially crossable": 30.0, "Easily crossable": 5.0}
+BARRIER_PENALTY_DECAY_M = 500.0   # tight, local decay - point barrier, not a landscape covariate
+
+# ── UNESCO heritage-conflict zones (v3 addition) ────────────────────────────
+
+HERITAGE_CONFLICT_PENALTY = 90.0   # near-ceiling: fixed, not distance-decayed - see
+                                    # heritage_conflict_penalty() docstring in
+                                    # build_resistance_surfaces.py for why this is an
+                                    # area-fill, not a point-kernel like the barriers above.
+HERITAGE_CONFLICT_GROUPS = ["land"]
 
 # ── Land tenure context (asset-or-barrier, not folded into resistance) ──────
 

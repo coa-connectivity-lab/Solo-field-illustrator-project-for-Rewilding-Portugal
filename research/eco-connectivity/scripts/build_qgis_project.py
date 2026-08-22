@@ -20,6 +20,7 @@ from qgis.core import (
     QgsRasterShader, QgsColorRampShader, QgsSingleBandPseudoColorRenderer,
     QgsStyle, QgsCategorizedSymbolRenderer, QgsRendererCategory,
     QgsSymbol, QgsSimpleFillSymbolLayer, QgsSimpleMarkerSymbolLayer,
+    QgsLinePatternFillSymbolLayer, QgsSimpleLineSymbolLayer,
     QgsLayerTreeGroup, QgsCoordinateReferenceSystem,
 )
 from qgis.PyQt.QtGui import QColor
@@ -114,6 +115,51 @@ def style_fire_raster(layer):
     layer.setOpacity(0.85)
 
 
+def style_barrier_permeability(layer):
+    """v3: barrier_observations, categorized by permeability_assessment - same
+    QgsCategorizedSymbolRenderer pattern as style_hunting_zones() below, just with
+    marker (point) symbol layers instead of fill layers."""
+    categories = []
+    colors = {
+        "Fully blocking": "#d73027",
+        "Partially crossable": "#fdae61",
+        "Easily crossable": "#1a9850",
+        "other": "#999999",
+    }
+    for value, color in colors.items():
+        symbol = QgsSymbol.defaultSymbol(layer.geometryType())
+        marker = QgsSimpleMarkerSymbolLayer()
+        marker.setColor(QColor(color))
+        marker.setStrokeColor(QColor("black"))
+        marker.setSize(3.2)
+        symbol.changeSymbolLayer(0, marker)
+        categories.append(QgsRendererCategory(value, symbol, value))
+    renderer = QgsCategorizedSymbolRenderer("permeability_assessment", categories)
+    layer.setRenderer(renderer)
+    layer.triggerRepaint()
+
+
+def style_heritage_excluded(layer, color="#7a0177"):
+    """v3: UNESCO heritage_protection.gpkg layers - a hatched, outlined fill so these
+    read visually as "excluded from the matrix" rather than just another land-cover
+    category (distinct from every other polygon style in this project, all of which are
+    solid or outline-only fills)."""
+    symbol = QgsSymbol.defaultSymbol(layer.geometryType())
+    hatch = QgsLinePatternFillSymbolLayer()
+    hatch.setLineAngle(45)
+    hatch.setDistance(2.5)
+    hatch.setLineWidth(0.6)
+    hatch.setColor(QColor(color))
+    symbol.changeSymbolLayer(0, hatch)
+    outline = QgsSimpleLineSymbolLayer()
+    outline.setColor(QColor(color))
+    outline.setWidth(0.8)
+    symbol.appendSymbolLayer(outline)
+    symbol.setOpacity(0.8)
+    layer.renderer().setSymbol(symbol)
+    layer.triggerRepaint()
+
+
 def style_hunting_zones(layer):
     categories = []
     colors = {"ZCM": "#fdae61", "ZCA": "#abd9e9", "ZCT": "#d7191c"}
@@ -195,12 +241,24 @@ def main():
     visited = add_vector(PROCESSED_DIR / "field_observations.gpkg", "visited_sites", "Visited sites (Survey123)", grp_sites)
     if visited:
         style_points(visited, "#d73027", 3.5)
+    barriers = add_vector(PROCESSED_DIR / "field_observations.gpkg", "barrier_observations", "Field-observed barriers (Survey123)", grp_sites)
+    if barriers:
+        style_barrier_permeability(barriers)
     not_visited = add_vector(PROCESSED_DIR / "tourism_sites.gpkg", "not_yet_visited", "Not yet visited", grp_sites)
     if not_visited:
         style_points(not_visited, "#4575b4", 3.5)
     ecotourism = add_vector(PROCESSED_DIR / "tourism_sites.gpkg", "potential_ecotourism_sites", "Potential eco-tourism sites", grp_sites)
     if ecotourism:
         style_points(ecotourism, "#fee08b", 4.0)
+
+    print("Heritage protection (UNESCO, v3 addition):")
+    grp_heritage = root.addGroup("Heritage protection (UNESCO - excluded from matrix)")
+    alto_douro = add_vector(PROCESSED_DIR / "heritage_protection.gpkg", "unesco_alto_douro", "Alto Douro Wine Region (WHC 1046)", grp_heritage)
+    if alto_douro:
+        style_heritage_excluded(alto_douro, "#7a0177")
+    coa_rock_art = add_vector(PROCESSED_DIR / "heritage_protection.gpkg", "coa_rock_art_core", "Côa Valley rock art core zone (WHC 866)", grp_heritage)
+    if coa_rock_art:
+        style_heritage_excluded(coa_rock_art, "#7a0177")
 
     QGIS_OUT.parent.mkdir(parents=True, exist_ok=True)
     project.write(str(QGIS_OUT))

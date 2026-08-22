@@ -15,9 +15,17 @@ Road trade-off:
 Waterway trade-off:
   barrier_severity  <- the Water group's resistance surface (already reflects
                         reduced permeability near infrastructure/impervious
-                        surfaces; a simplification - see notebook methodology
-                        note - since no separate dam/weir point layer was
-                        built for this pass)
+                        surfaces). v3 update: the "no separate dam/weir point
+                        layer" gap noted here previously is now filled -
+                        build_resistance_surfaces.py's barrier_penalty()
+                        folds Survey123 barrier_observations (Dam/Weir/
+                        Culvert -> water group only, per
+                        config.BARRIER_TYPE_TO_GROUPS) into water_resistance.tif
+                        directly. This function needs no code change to pick
+                        that up - it just reads the already-updated
+                        water_resistance.tif, so re-running
+                        build_resistance_surfaces.py before this script is
+                        what actually refreshes the barrier_severity term.
   access_value      <- proximity kernel around the same visitor sites, most of
                         which are river beaches (praia fluviais)
 

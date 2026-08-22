@@ -57,12 +57,62 @@ def check_road_effect() -> None:
 
 
 def check_survey_barriers() -> None:
-    """Cross-check Survey123 barrier permeability notes against modelled road resistance, where present."""
+    """v3: a real automated check, replacing the print-only placeholder this used to be
+    now that barrier_observations carries a structured permeability_assessment field
+    (not free text) and build_resistance_surfaces.py's barrier_penalty() actually burns
+    it into the resistance surfaces. Same direction-of-effect style as check_road_effect()
+    above: "Fully blocking" barrier points should sit in measurably higher-resistance
+    cells than "Easily crossable" ones, on whichever group(s) that barrier type maps to
+    (config.BARRIER_TYPE_TO_GROUPS)."""
     import geopandas as gpd
-    visited = gpd.read_file(config.DATA_PROCESSED / "field_observations.gpkg", layer="visited_sites")
-    print(f"Survey123 visited sites available for spot-check: {len(visited)} "
-          "(barrier-type/permeability fields are free text in this prototype export - "
-          "see acquire_field_observations.py docstring - so this is a manual read, not automated).")
+
+    barriers = gpd.read_file(config.DATA_PROCESSED / "field_observations.gpkg", layer="barrier_observations")
+    eligible = barriers[barriers["resistance_eligible"]]
+    print(f"Survey123 barrier_observations: {len(barriers)} rows, {len(eligible)} resistance_eligible")
+
+    for group_key in config.GROUPS:
+        resistance_path = config.DATA_PROCESSED / "resistance" / f"{group_key}_resistance.tif"
+        if not resistance_path.exists():
+            continue
+        relevant = eligible[eligible["barrier_type"].map(
+            lambda bt: group_key in config.BARRIER_TYPE_TO_GROUPS.get(bt, [])
+        )]
+        blocking = relevant[relevant["permeability_assessment"] == "Fully blocking"]
+        crossable = relevant[relevant["permeability_assessment"] == "Easily crossable"]
+        if blocking.empty or crossable.empty:
+            print(f"  {group_key}: not enough of both tiers to compare "
+                  f"({len(blocking)} fully blocking, {len(crossable)} easily crossable) - skipping")
+            continue
+
+        resistance = rioxarray.open_rasterio(resistance_path, masked=True).squeeze("band", drop=True)
+        transform = resistance.rio.transform()
+        rows, cols = resistance.shape
+
+        def _sample(points) -> np.ndarray:
+            vals = []
+            for geom in points.geometry:
+                col, row = ~transform * (geom.x, geom.y)
+                row, col = int(row), int(col)
+                if 0 <= row < rows and 0 <= col < cols:
+                    v = resistance.values[row, col]
+                    if not np.isnan(v):
+                        vals.append(v)
+            return np.array(vals)
+
+        blocking_vals = _sample(blocking)
+        crossable_vals = _sample(crossable)
+        if len(blocking_vals) == 0 or len(crossable_vals) == 0:
+            print(f"  {group_key}: barrier points fell outside the resistance grid - skipping")
+            continue
+
+        print(f"  {group_key}: 'Fully blocking' resistance mean {blocking_vals.mean():.1f} "
+              f"(n={len(blocking_vals)}); 'Easily crossable' resistance mean {crossable_vals.mean():.1f} "
+              f"(n={len(crossable_vals)})")
+        if blocking_vals.mean() > crossable_vals.mean():
+            print("    Direction as expected: 'Fully blocking' sits in higher-resistance cells.")
+        else:
+            print("    WARNING: 'Fully blocking' is not higher-resistance than 'Easily crossable' - "
+                  "check barrier_penalty().")
 
 
 def main() -> None:
