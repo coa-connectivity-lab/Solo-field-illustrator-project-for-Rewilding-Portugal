@@ -1,0 +1,42 @@
+site,x,y,map_category,functional_group,common_name,scientific_name,source_type,source_detail,notes
+Faia Brava,-7.0959837,40.9054166,Bird,"Scavenger, necrophagous",Griffon vulture,Gyps fulvus,panel,Reserva Faia Brava information panel (ATNatureza),"Common, presence guaranteed year-round per panel"
+Faia Brava,-7.0959837,40.9054166,Bird,Scavenger,Egyptian vulture,Neophron percnopterus,panel,Reserva Faia Brava information panel (ATNatureza),Regular spring/summer per panel
+Faia Brava,-7.0959837,40.9054166,Bird,Raptor,Bonelli's eagle,Aquila fasciata,panel,Reserva Faia Brava information panel (ATNatureza),
+Faia Brava,-7.0959837,40.9054166,Bird,Raptor,Golden eagle,Aquila chrysaetos,panel,Reserva Faia Brava information panel (ATNatureza),
+Faia Brava,-7.0959837,40.9054166,Bird,Wading bird,Black stork,Ciconia nigra,panel,Miradouro de Faia interpretive panel,"Rare, regular spring/summer per panel"
+Faia Brava,-7.0959837,40.9054166,Mammal,Ungulate,Roe deer,Capreolus capreolus,panel,Reserva Faia Brava information panel (ATNatureza),
+Faia Brava,-7.0959837,40.9054166,Mammal,Semi-aquatic carnivore,Eurasian otter,Lutra lutra,panel,Reserva Faia Brava information panel (ATNatureza),
+Faia Brava,-7.0959837,40.9054166,Mammal,Semi-wild grazer (rewilding-introduced),Garrano horse,Equus caballus,panel,Reserva Faia Brava information panel (ATNatureza),
+Faia Brava,-7.0959837,40.9054166,Reptile,Snake,Ladder snake,Zamenis scalaris,panel,Reserva Faia Brava information panel (ATNatureza),
+Faia Brava,-7.0959837,40.9054166,Flora,Tree,Montpellier maple,Acer monspessulanum,panel,Reserva Faia Brava information panel (ATNatureza),
+Faia Brava,-7.0959837,40.9054166,Flora,Shrub,Spanish broom,,panel,Reserva Faia Brava information panel (ATNatureza),Genus unspecified on panel translation
+Faia Brava,-7.0959837,40.9054166,Flora,Tree,Holm oak,Quercus ilex,panel,Reserva Faia Brava information panel (ATNatureza),cf. - panel identification
+Faia Brava,-7.0959837,40.9054166,Bird,Songbird,Western Orphean warbler,,tourism_website,Visit Center of Portugal - Faia Brava Natural Reserve page,Not on the physical panel; scientific name to verify before publishing (likely Curruca hortensis)
+Faia Brava,-7.0959837,40.9054166,Mammal,Semi-wild grazer (rewilding-introduced),Tauros cattle,Bos taurus,tourism_website,Visit Center of Portugal - Faia Brava Natural Reserve page,Not on the physical panel transcription
+"Vale Carapito, Vilar Maior",-6.9503,40.4831,Flora,Tree,Pyrenean oak,Quercus pyrenaica,panel,"Rewilding Portugal VC1 trailhead panel, Vale Carapito",Photo credit on panel: Juan Carlos Munoz
+"Vale Carapito, Vilar Maior",-6.9503,40.4831,Invertebrate,Butterfly,Niobe fritillary,Fabriciana niobe,panel,"Rewilding Portugal VC1 trailhead panel, Vale Carapito",Photo credit on panel: Albano Soares
+"Vale Carapito, Vilar Maior",-6.9503,40.4831,Reptile,Lizard,Algerian psammodromus,Psammodromus algirus,panel,"Rewilding Portugal VC1 trailhead panel, Vale Carapito",Photo credit on panel: HMM Alberto
+"Vale Carapito, Vilar Maior",-6.9503,40.4831,Amphibian,Tree frog,Iberian tree frog,Hyla molleri,panel,"Rewilding Portugal VC1 trailhead panel, Vale Carapito",Photo credit on panel: Andre Couto
+"Vale Carapito, Vilar Maior",-6.9503,40.4831,Bird,Raptor,Booted eagle,Hieraaetus pennatus,panel,"Rewilding Portugal VC1 trailhead panel, Vale Carapito",Photo credit on panel: Staffan Widstrand
+"Vale Carapito, Vilar Maior",-6.9503,40.4831,Bird,Songbird,Golden oriole,Oriolus oriolus,panel,"Rewilding Portugal VC1 trailhead panel, Vale Carapito",Photo credit on panel: Dietmar Nill
+"Vale Carapito, Vilar Maior",-6.9503,40.4831,Mammal,Ungulate,Roe deer,Capreolus capreolus,panel,"Rewilding Portugal VC1 trailhead panel, Vale Carapito",Photo credit on panel: Tiago Laginha
+"Vale Carapito, Vilar Maior",-6.9503,40.4831,Mammal,Semi-wild grazer (rewilding-introduced),Sorraia horse,Equus ferus caballus,panel,"Rewilding Portugal VC1 trailhead panel, Vale Carapito",Photo credit on panel: Joao Ferreira
+"Ermo das Águias, Vale de Madeira",-7.010353664,40.785694436,Mammal,"Herbivore, equid (rewilding-introduced)",Sorraia horse,Equus ferus caballus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)","Semi-wild herd, introduced 2022"
+"Ermo das Águias, Vale de Madeira",-7.010353664,40.785694436,Mammal,"Herbivore, bovid (rewilding-introduced)",Tauros cattle,Bos taurus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)","Back-bred type, herd released April 2023"
+"Ermo das Águias, Vale de Madeira",-7.010353664,40.785694436,Flora,Shrub,White broom,Cytisus multiflorus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",Dominant shrub across the site
+"Ermo das Águias, Vale de Madeira",-7.010353664,40.785694436,Flora,Tree,Cork oak,Quercus suber,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",Fire-surviving patches
+"Ermo das Águias, Vale de Madeira",-7.010353664,40.785694436,Mammal,Predator (landscape-managed),Iberian wolf,Canis lupus signatus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",LIFE WolfLux project area
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,"Raptor, cliff-nesting",Griffon vulture,Gyps fulvus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,"Raptor, cliff-nesting",Egyptian vulture,Neophron percnopterus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,"Raptor, cliff-nesting",Short-toed snake eagle,Circaetus gallicus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,"Raptor, cliff-nesting",Booted eagle,Hieraaetus pennatus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",Same species also confirmed at Vale Carapito
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,"Raptor, cliff-nesting",Golden eagle,Aquila chrysaetos,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,"Raptor, cliff-nesting",Peregrine falcon,Falco peregrinus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,Bird,Red-legged partridge,Alectoris rufa,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,Bird,European turtle dove,Streptopelia turtur,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,Bird,Eurasian hoopoe,Upupa epops,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,Bird,European bee-eater,Merops apiaster,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",
+Ribeira do Mosteiro,-6.908539,41.041487,Bird,Songbird,Golden oriole,Oriolus oriolus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",Same species also confirmed at Vale Carapito
+Ribeira do Mosteiro,-6.908539,41.041487,Flora,Woodland tree,Holm oak,Quercus rotundifolia,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",Recolonising old agricultural terraces
+Ribeira do Mosteiro,-6.908539,41.041487,Flora,Woodland tree,Juniper,,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)",Species unspecified; recolonising old agricultural terraces
+Ribeira do Mosteiro,-6.908539,41.041487,Flora,Woodland tree,Terebinth,Pistacia terebinthus,colleague_confirmed,"Colleague field confirmation, Aug 2026 (originally desk-research pending visit)","Species likely, unconfirmed; recolonising old agricultural terraces"

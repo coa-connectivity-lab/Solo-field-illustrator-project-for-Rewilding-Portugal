@@ -18,14 +18,10 @@ Progress so far
 
 Remaining
 
-(i) Paul de Toirões, Water. Wetland/marsh site, standing water and wetland connectivity rather than river channel and weirs. **Personal visit planned this weekend, 22 August 2026.** Official Rewilding Portugal guided walk also scheduled 29 Aug, 18h-20h, guide Fernando Romão (Wildlife Portugal) — per `survey123/4-Field-Trips.jpg`.
+(i) Paul de Toirões, Water. Wetland/marsh site, standing water and wetland connectivity rather than river channel and weirs. **Personal visit planned this weekend, 22 August 2026.** Official Rewilding Portugal guided walk also scheduled 29 Aug, 18h-20h, guide Fernando Romão (Wildlife Portugal) — per `survey123/4-Field-Trips.jpg`. & (ii) Vale Carapito, Movement. Sorraia horses and Tauros cattle, grazer and dung beetle field observations against the Endangered Landscapes Programme's reintroduction numbers. Official Rewilding Portugal guided walk scheduled 12 Sept, 18h-20h, guide Samuel Ribeiro (Beir'Aja) — per `survey123/4-Field-Trips.jpg`.; (iii) **Personal visit planned this weekend, 22 August 2026.** : https://www.centerofportugal.com/poi/faia-brava-natural-reserve
 
-(ii) Vale Carapito, Movement. Sorraia horses and Tauros cattle, grazer and dung beetle field observations against the Endangered Landscapes Programme's reintroduction numbers. Official Rewilding Portugal guided walk scheduled 12 Sept, 18h-20h, guide Samuel Ribeiro (Beir'Aja) — per `survey123/4-Field-Trips.jpg`. **Personal visit planned this weekend, 23 August 2026.** 
-
-(iII) Ermo das Águias — **personal visit planned Wednesday-Thursday, 26 August 2026.** The other official Sorraia horse/Tauros reintroduction site (alongside Vale Carapito), not one of the original three plates but directly relevant to the Movement theme. Official Rewilding Portugal guided walk also scheduled 20 Sept, 9h-11h30, guide Marco Ferraz (AmbiEduca) — per `survey123/4-Field-Trips.jpg`.
-
-(iv) Ribeira do Mosteiro, Connection. Closing site, ties Movement and Water back together, natural home for the corridor-fragmentation argument drawn from Rewilding Portugal's SOPHIA position. Official Rewilding Portugal guided walk scheduled 6 Sept, 9h-11h30, Calçada de Alpájares, guide Fernando Romão (Wildlife Portugal) — per `survey123/4-Field-Trips.jpg`.
-**personal visit planned Wednesday-Thursday, 27 August 2026.** 
+(iv) Ermo das Águias — **personal visit planned Sundayy, 23 August 2026.** The other official Sorraia horse/Tauros reintroduction site (alongside Vale Carapito), not one of the original three plates but directly relevant to the Movement theme. Official Rewilding Portugal guided walk also scheduled 20 Sept, 9h-11h30, guide Marco Ferraz (AmbiEduca) — per `survey123/4-Field-Trips.jpg`.; (v) Ribeira do Mosteiro, Connection. Closing site, ties Movement and Water back together, natural home for the corridor-fragmentation argument drawn from Rewilding Portugal's SOPHIA position. Official Rewilding Portugal guided walk scheduled 6 Sept, 9h-11h30, Calçada de Alpájares, guide Fernando Romão (Wildlife Portugal) — per `survey123/4-Field-Trips.jpg`.
+**personal visit plannedSunday, 23 August 2026.** 
 
 
 

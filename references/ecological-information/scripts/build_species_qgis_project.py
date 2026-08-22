@@ -26,8 +26,14 @@ from qgis.core import (
     QgsApplication, QgsProject, QgsVectorLayer,
     QgsSymbol, QgsSimpleFillSymbolLayer,
     QgsLayerTreeGroup, QgsCoordinateReferenceSystem,
+    QgsCategorizedSymbolRenderer, QgsRendererCategory, QgsMarkerSymbol,
 )
 from qgis.PyQt.QtGui import QColor
+
+CATEGORY_COLORS = {
+    "Bird": "#1b9e77", "Mammal": "#d95f02", "Reptile": "#7570b3",
+    "Amphibian": "#e7298a", "Invertebrate": "#66a61e", "Flora": "#e6ab02",
+}
 
 REFS_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = REFS_DIR / "data"
@@ -68,6 +74,31 @@ def add_csv_table(path: Path, display_name: str, group):
     return layer
 
 
+def add_csv_points(path: Path, x_field: str, y_field: str, display_name: str, group, crs: str = "EPSG:4326"):
+    uri = f"file:///{path}?type=csv&detectTypes=yes&xField={x_field}&yField={y_field}&crs={crs}"
+    layer = QgsVectorLayer(uri, display_name, "delimitedtext")
+    if not layer.isValid():
+        print(f"  INVALID points: {uri}")
+        return None
+    project.addMapLayer(layer, False)
+    group.addLayer(layer)
+    print(f"  points: {display_name}")
+    return layer
+
+
+def style_categorized(layer, field, colors, outline="black", outline_width=0.2, size=2.6):
+    categories = []
+    for value, color in colors.items():
+        symbol = QgsMarkerSymbol.createSimple({
+            "name": "circle", "color": color,
+            "outline_color": outline, "outline_width": str(outline_width),
+            "size": str(size),
+        })
+        categories.append(QgsRendererCategory(value, symbol, value))
+    layer.setRenderer(QgsCategorizedSymbolRenderer(field, categories))
+    layer.triggerRepaint()
+
+
 def style_outline(layer, color="black", width=1.0):
     symbol = QgsSymbol.defaultSymbol(layer.geometryType())
     fill = QgsSimpleFillSymbolLayer()
@@ -93,6 +124,16 @@ def main():
     grp_species = root.addGroup("Rewilding Portugal 2025 Annual Review - species")
     add_csv_table(DATA_DIR / "annual_review_2025_species.csv", "Named species present (Greater Côa Valley)", grp_species)
     add_csv_table(DATA_DIR / "annual_review_2025_aggregate_counts.csv", "Aggregate species counts (not itemised in report)", grp_species)
+
+    print("Visitor board / field-trip species (photographed panels, tourism sites, colleague-confirmed):")
+    grp_visitor = root.addGroup("Visitor board species (field trips, Aug 2026)")
+    visitor_layer = add_csv_points(
+        DATA_DIR / "visitor_board_species_2026.csv", "x", "y",
+        "Species — Faia Brava, Vale Carapito, Ermo das Águias, Ribeira do Mosteiro",
+        grp_visitor,
+    )
+    if visitor_layer:
+        style_categorized(visitor_layer, "map_category", CATEGORY_COLORS)
 
     QGIS_OUT.parent.mkdir(parents=True, exist_ok=True)
     project.write(str(QGIS_OUT))
