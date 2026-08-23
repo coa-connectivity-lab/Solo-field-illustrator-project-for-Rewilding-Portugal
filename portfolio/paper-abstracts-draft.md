@@ -1,7 +1,7 @@
 # Draft paper abstracts
-Linda Angulo Lopez, 22 August 2026
+Linda Angulo Lopez, 22 August 2026, updated 23 August 2026
 
-Seven candidate papers drawn from the Greater Côa Valley eco-connectivity pipeline (v1–v4) and its six companion desk studies. Each is a draft abstract only — title and venue are suggestions, not commitments, and every abstract below inherits the underlying work's own stated limitations (noted in brackets where the claim is genuinely open rather than settled). Order is roughly pipeline-methods first, then the comparative/policy papers built on top of it.
+Eleven candidate papers drawn from the Greater Côa Valley eco-connectivity pipeline (v1–v5) and its eleven companion desk studies. Each is a draft abstract only — title and venue are suggestions, not commitments, and every abstract below inherits the underlying work's own stated limitations (noted in brackets where the claim is genuinely open rather than settled). Order is roughly pipeline-methods first, then the comparative/policy papers built on top of it. Abstracts 8–11 are new, drawn from v5's corrections and closing sections; abstracts 1–7 are unchanged from the original draft.
 
 ---
 
@@ -72,3 +72,43 @@ Seven candidate papers drawn from the Greater Côa Valley eco-connectivity pipel
 **Abstract.** We describe a compiled, open geospatial dataset supporting eco-connectivity analysis in the Greater Côa Valley, Portugal: a citizen-science Survey123 field-observation layer (22 site visits, 26 melted species observations, 25 melted barrier observations with permeability assessments), reconciled against an earlier, less complete export of the same underlying form to demonstrate a repeatable schema-evolution pattern for growing citizen-science datasets; and a UNESCO World Heritage protected-landscape layer for two sites overlapping the study area (the Alto Douro Wine Region and the Prehistoric Rock Art Sites of the Côa Valley), sourced from Portugal's official cultural-heritage geoportal after two more commonly used sources (UNESCO's own boundary data and the World Database on Protected Areas) proved unusable for these specific, culturally rather than naturally classified sites, a sourcing dead-end worth documenting for other researchers attempting the same lookup. We report data-quality findings arising from the compilation process itself, including a confirmed undercount in an existing private-reserve layer against independently published figures, and describe the melting/validation logic used to separate genuine physical barriers from a small number of misclassified fire-disturbance and stray-annotation records in the raw survey export. All layers are released in a common CRS (EPSG:3035) alongside the scripts used to build them.
 
 **Keywords:** geospatial data, citizen science, Survey123, UNESCO World Heritage, protected areas, data descriptor, Portugal
+
+---
+
+## 8. Whose framework? A case study in correcting epistemic attribution within applied conservation science
+
+**Suggested venue:** An environmental social-science or science-and-technology-studies venue, or *Environmental Science & Policy*.
+
+**Abstract.** Applied conservation science routinely borrows normative frameworks from adjacent fields without auditing their intellectual lineage. We document a concrete instance from our own work: an eco-connectivity notebook for the Greater Côa Valley initially credited its "safe and just" framing to a 2012 mainstream sustainability-economics model, then corrected that attribution across two rounds of revision once the framing's actual sources were properly traced, first to the Earth Commission's 2023 justice-integrated planetary-boundaries work, then further back to Indigenous Science and community-led climate justice movements that have held the underlying idea, living within ecological limits while upholding justice and right relationship with the land, for far longer than any Western academic paper. We present this correction itself as the case study: what it took to notice the misattribution, what sources correctly establish the idea's actual lineage, and what changes, and what does not, when a conservation-science document's normative framing is corrected rather than left standing on a convenient but wrong citation. We are explicit that this is a reflexive methods contribution, not a claim to have resolved the underlying epistemic-justice literature's own open questions about how Earth-system science should relate to Indigenous knowledge systems it does not originate from.
+
+**Keywords:** epistemic justice, Indigenous science, planetary boundaries, reflexivity, conservation science, citation practice
+
+---
+
+## 9. Ocean currents as the physical infrastructure of empire: land-to-sea connectivity between Portugal and its former colonies
+
+**Suggested venue:** *Environmental History*, *Water History*, or a historical-geography venue.
+
+**Abstract.** Portugal's colonial reach into Brazil, Angola, and Mozambique is conventionally narrated through administrative, linguistic, and economic history. We argue the physical mechanism deserves equal billing: the North and South Atlantic Gyres and the Agulhas Current were not a backdrop to Portuguese expansion, they were its literal, load-bearing infrastructure. The *volta do mar* navigational technique used the North Atlantic Gyre's clockwise circulation to make the West African route viable at all; Cabral's 1500 landfall in Brazil was a direct consequence of South Atlantic Gyre currents and trade winds carried out on the same logic, not chance; the Benguela Current forced a wide Atlantic detour past Angola that is itself the reason Cabral's route crossed the ocean it did; and the Agulhas Current carried ships on to Mozambique and India. We further argue this connectivity did not end with empire: the Benguela Current is today a major upwelling fishery undergoing documented climate-driven warming with direct consequences for Angolan food security, the Agulhas Current sustains coral-reef biodiversity in Mozambique's Quirimbas Archipelago, and the Portuguese Current carries microplastics along Portugal's own coast today. We frame this as ecological connectivity, the same conceptual tool used elsewhere in this research programme's circuit-theory modelling, applied at ocean-basin rather than landscape scale.
+
+**Keywords:** ocean currents, colonial history, environmental history, Age of Discovery, Benguela Current, Agulhas Current, ecological connectivity
+
+---
+
+## 10. Colonial extraction, community resistance, and civil war: three divergent ecological policy trajectories in Brazil, Mozambique, and Angola
+
+**Suggested venue:** *Journal of Political Ecology*, *World Development*, or a postcolonial-studies venue.
+
+**Abstract.** We compare colonial-era environmental policy and its post-independence trajectory across three former Portuguese colonies, finding three genuinely different stories rather than one shared "colonial legacy" narrative. Brazil's coastal Atlantic Forest was cleared from first contact while its Amazon interior remained largely unsettled through the colonial period, a split later addressed, imperfectly but measurably, by strong post-independence state institutions culminating in a documented 11% year-on-year fall in Amazon deforestation as of the most recent reporting. Mozambique's colonial extraction pattern is being actively reproduced in the present by ProSavana, a Brazil–Japan–Mozambique agribusiness project threatening an estimated four million small-scale farmers, constrained not by state policy but by community-led resistance, Mozambique's own Justiça Ambiental and UNAC peasants' union, joined by Brazil's Landless Workers' Movement (MST), a direct present-day instance of cross-border, community-led environmental justice organising. Angola's late-colonial conservation infrastructure, a 1911 hunting-licence conservation fund expanding into protected parks by the 1930s and 1970s, collapsed entirely during the post-independence civil war, with the resulting governance vacuum filled by diamond and oil extraction continuing colonial logics under new ownership. We argue the common thread across all three is not the colonial administrations' own environmental record but the record of who resisted, rebuilt, or is still contesting a different relationship with the land, and that this standpoint, not a state-to-state policy comparison, is the more honest unit of analysis.
+
+**Keywords:** postcolonial political ecology, Brazil, Mozambique, Angola, environmental justice, ProSavana, land grabbing
+
+---
+
+## 11. Remote work, AI, and the future conservation workforce: a prospective assessment for a small-scale European rewilding landscape
+
+**Suggested venue:** A conservation-careers or future-of-work venue, or *People and Nature*.
+
+**Abstract.** Rural rewilding initiatives face a persistent staffing constraint distinct from the land-tenure and funding constraints more commonly studied: low local population density limits the pool of nearby skilled labour and volunteers. We assess whether two recent structural shifts, post-COVID normalisation of remote work and AI tools lowering the effort barrier for remote-contributable conservation-support tasks (GIS analysis, translation, communications, grant writing), constitute a genuine emerging opportunity for a landscape like Portugal's Greater Côa Valley. We document three real, already-existing pieces of infrastructure this could draw on: Portugal's D8 Digital Nomad Visa, in place since 2022 with over 2,600 visas issued by 2024; Madeira's government-backed Ponta do Sol "Digital Nomad Village" as a working precedent for purpose-built remote-work-plus-place infrastructure; and southern Africa's FGASA/EcoTraining field-guide and reserve-manager training pipeline, internationally recognised but, per Rewilding Europe's own published assessment, translating into European roles that skew toward conservation management, policy, and communications rather than direct field-ranger work. We candidly report finding no evidence that this pipeline is yet operating at scale for the Côa Valley specifically, beyond one documented case, the lead author's own position in a structured academic-talent programme supporting the same initiative. We present this as a well-grounded prospective opportunity worth naming plainly, not a documented trend, and close on the observation that workforce capacity, unlike land, is not fenced, licensed, or bound by inheritance.
+
+**Keywords:** future of work, remote work, artificial intelligence, conservation workforce, digital nomad visa, rewilding, volunteer tourism
