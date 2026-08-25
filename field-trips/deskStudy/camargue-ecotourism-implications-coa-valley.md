@@ -38,6 +38,20 @@ None of the sources checked for this note gave a total annual visitor count for 
 
 **Companion QGIS map:** `research/camargue-comparison/qgis/camargue_ecotourism.qgz` lays out three layers built from this same fact base — `protected_areas` (the regional park and national reserve boundaries above, categorized), `ecological_zones` (7,939 OSM-tagged habitat polygons — wetland, salt pond, water, scrub, beach/sand, farmland, meadow, grassland, vineyard — a coarse tag-based ecological-region proxy, not a calibrated land-cover classification), and `ecotourism_facilities` (six points: the Avignon tourism office, the park's Musée de la Camargue visitor centre, the Arles 4x4-safari departure point, the Saintes-Maries-de-la-Mer gateway town, Étang de Vaccarès as an orientation landmark, and the Bellegarde lavender-distillery stop — all geocoded from Linda's own itinerary, sourced in `research/camargue-comparison/scripts/acquire_camargue_layers.py`). La Capelière, the SNPN reserve's own visitor information point, was searched for and found no Nominatim match — left out rather than placed by guesswork.
 
+**Methodology for the maps below:** built with `research/camargue-comparison/scripts/generate_maps.py`, matplotlib/GeoPandas on the same three `camargue_layers.gpkg` layers as the QGIS deliverable, reprojected to EPSG:3035 (ETRS89-LAEA Europe, this project's standard metric CRS). Facility-in-boundary checks (Map 3's caption below) are computed directly against the polygon geometries, not eyeballed.
+
+![Map 1: Camargue protected-area context](../../research/camargue-comparison/output/maps/01_protected_areas.png)
+
+*Map 1. Regional Nature Park boundary (82,000 ha) and the SNPN-managed National Nature Reserve within it (13,232 ha).*
+
+![Map 2: ecological zones by OSM habitat tag](../../research/camargue-comparison/output/maps/02_ecological_zones.png)
+
+*Map 2. 7,939 OSM-tagged habitat polygons — a coarse tag-derived proxy, not a calibrated land-cover classification (see caveat above).*
+
+![Map 3: ecotourism access and facilities](../../research/camargue-comparison/output/maps/03_ecotourism_facilities.png)
+
+*Map 3. All six facility points against the national reserve boundary. Only three (Musée de la Camargue, Saintes-Maries-de-la-Mer, Étang de Vaccarès) fall inside the regional park itself — the Avignon tourism office, the Arles safari departure point, and the Bellegarde distillery are real gateway/departure points outside it, not park-internal facilities.*
+
 ## Free herds vs. working herds: an ethical distinction worth not skipping
 
 It would be easy to read "semi-feral horses and cattle managed by herders" and treat the Camargue and the Côa Valley's Sorraia horses and Tauros cattle as the same kind of thing. They aren't, and the difference matters for what this project should and shouldn't borrow.

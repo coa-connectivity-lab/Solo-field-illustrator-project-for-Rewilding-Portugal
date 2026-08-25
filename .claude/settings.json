@@ -13,7 +13,12 @@
       "Bash(curl -s \"https://api.gbif.org/v1/occurrence/search?taxonKey=212&decimalLongitude=2.45,2.85&decimalLatitude=48.30,48.50&hasCoordinate=true&limit=3\")",
       "Bash(curl -s \"https://api.gbif.org/v1/species/search?q=Reptilia&rank=CLASS&limit=5\")",
       "Bash(curl -s \"https://api.gbif.org/v1/species/match?name=Squamata&rank=ORDER\")",
-      "Bash(curl -s -X POST --data-urlencode data@/tmp/overpass_facilities.txt https://overpass-api.de/api/interpreter -A linda-fontainebleau-research/1.0 -o /tmp/facilities.json --max-time 60)"
+      "Bash(curl -s -X POST --data-urlencode data@/tmp/overpass_facilities.txt https://overpass-api.de/api/interpreter -A linda-fontainebleau-research/1.0 -o /tmp/facilities.json --max-time 60)",
+      "Bash(PYTHONPATH=.. python3 build_qgis_project.py)",
+      "WebFetch(domain:www.birdingplaces.eu)",
+      "Bash(xargs -I{} echo {})",
+      "Bash(gh auth *)",
+      "Bash(git add *)"
     ]
   }
 }

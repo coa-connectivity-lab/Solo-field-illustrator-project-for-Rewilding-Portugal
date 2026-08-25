@@ -1,11 +1,15 @@
 """
 generate_maps.py
 ────────────────────
-Three report-embedded PNG maps, output/maps/ - matplotlib/geopandas, same
+Report-embedded PNG maps, output/maps/ - matplotlib/geopandas, same
 convention as research/eco-connectivity/scripts/generate_maps.py,
 research/camargue-comparison/, and research/limpopo-mine-restoration/.
 
 All maps in CRS_METRIC (EPSG:2154, RGF93/Lambert-93).
+
+v6 addition: map_00_fontainebleau_at_a_glance() - a single combined "at a
+glance" summary figure (notebook v6 lead image for this region), on top of
+the four detail maps below.
 """
 
 import geopandas as gpd
@@ -28,6 +32,44 @@ def _base(ax, boundary):
     ax.set_yticks([])
     for spine in ax.spines.values():
         spine.set_visible(False)
+
+
+def map_00_fontainebleau_at_a_glance():
+    """Single combined figure distilling the fire-history finding for a
+    non-GIS reader: zero MODIS-detected burns within the forest boundary,
+    2015 through the collection's data-currency cutoff (~mid-2025)."""
+    boundary = _load(config.BOUNDARY_GPKG, "fontainebleau_boundary")
+    pa = _load(config.PROTECTED_GPKG, "protected_areas")
+    fire = _load(config.FIRE_GPKG, "fire_history")
+    rbi = pa[pa["designation"].str.contains("Intégrale", na=False)]
+
+    fig, ax = plt.subplots(figsize=(10, 9))
+    _base(ax, boundary)
+    rbi.plot(ax=ax, facecolor="#5aae61", edgecolor="#1b7837", alpha=0.5, linewidth=0.8, zorder=2)
+
+    ax.set_title("Fontainebleau at a glance\nZero MODIS-detected fires, 2015–mid 2025",
+                  fontsize=13, weight="bold", loc="left")
+    n_burns = len(fire)
+    callout = (
+        "Key implication: this is the sharpest possible contrast with the Côa\n"
+        "Valley's own record - a single wildfire burned 5,000+ ha across\n"
+        "Almeida, Sabugal and Pinhel in two days (Jul 2026), more than 30x\n"
+        "Fontainebleau's entire core forest area."
+        if n_burns == 0 else
+        f"{n_burns} MODIS-detected burn polygon(s) found within the boundary."
+    )
+    ax.text(0.01, 0.01, callout, transform=ax.transAxes, fontsize=8, ha="left", va="bottom",
+            style="italic", color="#333333",
+            bbox=dict(boxstyle="round", facecolor="white", alpha=0.9, edgecolor="#cccccc"))
+    handles = [Patch(facecolor="#5aae61", edgecolor="#1b7837", alpha=0.6,
+                      label="Réserve Biologique Intégrale (strict reserve)")]
+    ax.legend(handles=handles, loc="upper left", fontsize=7.5, framealpha=0.9)
+    ax.text(0.99, 0.01, "CRS: EPSG:2154 (RGF93/Lambert-93) | Sources: OSM, MODIS MCD64A1.061 via Planetary Computer",
+            transform=ax.transAxes, fontsize=6, ha="right", va="bottom", color="#555555")
+    fig.tight_layout()
+    fig.savefig(config.OUTPUT_MAPS / "00_fontainebleau_at_a_glance.png", dpi=150)
+    plt.close(fig)
+    print(f"  wrote 00_fontainebleau_at_a_glance.png ({n_burns} burn polygons)")
 
 
 def map_01_protected_areas():
@@ -173,6 +215,7 @@ def map_04_fire_history():
 
 
 def main():
+    map_00_fontainebleau_at_a_glance()
     map_01_protected_areas()
     map_02_species_occurrences()
     map_03_ecotourism_facilities()

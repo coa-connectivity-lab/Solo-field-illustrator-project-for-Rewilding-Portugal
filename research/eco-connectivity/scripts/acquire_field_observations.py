@@ -12,10 +12,24 @@ up to 3 repeated species-observation blocks and up to 3 repeated
 barrier-observation blocks per row (Survey123's repeat-group export
 convention — pandas auto-suffixes the duplicate CSV headers .1/.2 on read).
 
+v4: the same CSV export has grown from 22 to 26 rows. The 4 new rows (indices
+22-25) are NOT real field visits — they're desk-study reference pins Linda
+added to the same Survey123 form while researching comparison regions:
+"Avignon and the Camargue" (France), "Mine Restoration and Ecological
+Connectivity in Limpopo Province" (South Africa), "Forêt de Fontainebleau"
+(France), and "Ermo das Águias — Mixed Mediterranean Habitat Mosaic" (Côa
+Valley itself). The first three sit real-world outside the Côa study area
+entirely; only the Ermo das Águias pin falls inside it. All four have a
+blank `Date and time` field, which the v3 strict-format date parser would
+crash on — see the `errors="coerce"` fix below. See `in_study_area` on
+`visited_sites` for how downstream consumers filter these out without
+guessing.
+
 Three output layers in field_observations.gpkg:
   visited_sites        - one row per survey visit (unchanged shape/logic,
                           now CSV-sourced): site_name, date_and_time,
-                          sensitive, location_precision, geometry.
+                          sensitive, location_precision, in_study_area,
+                          geometry.
   species_observations  - long-form melt of the 3 species blocks, one row per
                           non-null "Functional group" slot. Narrative-only:
                           species identity here is often uncertain in the
@@ -198,8 +212,12 @@ def main() -> None:
     gdf["_raw_y"] = df["y"].values
     gdf = gdf.rename(columns={"Site name": "site_name", "Date and time": "date_and_time"})
     gdf["date_and_time"] = pd.to_datetime(
-        gdf["date_and_time"], format="%m/%d/%Y %I:%M:%S %p"
+        gdf["date_and_time"], format="%m/%d/%Y %I:%M:%S %p", errors="coerce"
     ).dt.tz_localize("UTC")
+    n_no_date = int(gdf["date_and_time"].isna().sum())
+    if n_no_date:
+        print(f"  {n_no_date} row(s) have no Date and time (desk-study reference pins, not real visits): "
+              f"{sorted(gdf.loc[gdf['date_and_time'].isna(), 'site_name'].tolist())}")
 
     if n_sensitive:
         mask = gdf["sensitive"]
@@ -208,10 +226,21 @@ def main() -> None:
         )
     gdf["location_precision"] = gdf["sensitive"].map({True: "generalized", False: "exact"})
 
-    # ── visited_sites (unchanged shape) ─────────────────────────────────────
-    keep_cols = ["site_name", "date_and_time", "sensitive", "location_precision", "geometry"]
+    study_area = gpd.read_file(config.DATA_PROCESSED / "study_area.gpkg", layer="study_area")
+    minx, miny, maxx, maxy = study_area.to_crs(config.CRS_METRIC).total_bounds
+    gdf["in_study_area"] = gdf.geometry.x.between(minx, maxx) & gdf.geometry.y.between(miny, maxy)
+
+    # ── visited_sites (v4 adds in_study_area) ───────────────────────────────
+    keep_cols = ["site_name", "date_and_time", "sensitive", "location_precision", "in_study_area", "geometry"]
     gdf[keep_cols].to_file(OUT_GPKG, layer="visited_sites", driver="GPKG")
-    print(f"visited_sites: {len(gdf)} field visits loaded, {n_sensitive} flagged sensitive and generalised")
+    is_reference_pin = gdf["date_and_time"].isna()
+    n_real_visits = int((~is_reference_pin).sum())
+    n_pins_out_of_area = int((is_reference_pin & ~gdf["in_study_area"]).sum())
+    n_visits_out_of_area = int((~is_reference_pin & ~gdf["in_study_area"]).sum())
+    print(f"visited_sites: {len(gdf)} total rows -> {n_real_visits} real field visits "
+          f"({n_visits_out_of_area} of those outside the study area, e.g. the Douro estuary/coast day trip), "
+          f"{n_no_date} desk-study reference pins ({n_pins_out_of_area} of those outside the study area), "
+          f"{n_sensitive} flagged sensitive and generalised")
 
     # ── species_observations (narrative only) ───────────────────────────────
     species = _melt_species(gdf)
@@ -236,8 +265,6 @@ def main() -> None:
         for reason, count in barriers.loc[~barriers["resistance_eligible"], "_exclusion_reason"].value_counts().items():
             print(f"    - {reason}: {count}")
 
-    study_area = gpd.read_file(config.DATA_PROCESSED / "study_area.gpkg", layer="study_area")
-    minx, miny, maxx, maxy = study_area.to_crs(config.CRS_METRIC).total_bounds
     out_of_bounds = ~barriers.geometry.x.between(minx, maxx) | ~barriers.geometry.y.between(miny, maxy)
     n_oob = int(out_of_bounds.sum())
     print(f"  barrier rows outside study_area.gpkg bounding box (won't rasterize onto the resistance grid): {n_oob}")

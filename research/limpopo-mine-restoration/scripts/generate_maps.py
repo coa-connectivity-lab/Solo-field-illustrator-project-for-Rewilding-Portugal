@@ -1,13 +1,17 @@
 """
 generate_maps.py
 ────────────────────
-Four report-embedded PNG maps, output/maps/ — follows this project's own
+Report-embedded PNG maps, output/maps/ — follows this project's own
 established convention for report-ready static maps (matplotlib/geopandas,
 confirmed by reading research/eco-connectivity/scripts/generate_maps.py; not
 QGIS print layouts, which this project doesn't use for this purpose).
 
 All maps rendered in CRS_METRIC (ESRI:102022, Africa Albers Equal Area
-Conic) so distances/areas read consistently across all four.
+Conic) so distances/areas read consistently across all of them.
+
+v6 addition: map_00_limpopo_at_a_glance() - a single combined "at a glance"
+summary figure (notebook v6 lead image for this region's mine-restoration/
+connectivity subsection), condensing Map 4's restoration-priority finding.
 """
 
 import geopandas as gpd
@@ -32,6 +36,57 @@ def _base(ax, boundary, rivers=None):
     ax.set_yticks([])
     for spine in ax.spines.values():
         spine.set_visible(False)
+
+
+def map_00_limpopo_at_a_glance():
+    """Condenses Map 4's restoration-priority finding into one figure:
+    documented TFCA context, and the mines closest to protected areas
+    (priority vs. secondary restoration opportunities)."""
+    boundary = _load(config.BOUNDARY_GPKG, "limpopo_boundary")
+    pa = _load(config.PROTECTED_GPKG, "protected_areas")
+    documented = _load(config.CONNECTIVITY_GPKG, "documented_tfca_context")
+    pinch = _load(config.CONNECTIVITY_GPKG, "mine_pinch_points")
+
+    fig, ax = plt.subplots(figsize=(10, 9))
+    _base(ax, boundary)
+
+    pa_poly = pa[pa["boundary_type"] == "polygon (OSM)"]
+    pa_poly.plot(ax=ax, facecolor="#cccccc", edgecolor="#888888", alpha=0.4, linewidth=0.8, zorder=1)
+    documented.plot(ax=ax, facecolor="#1a9850", edgecolor="#1a9850", alpha=0.35, linewidth=1.5, zorder=2)
+
+    high_priority = pinch[pinch["distance_km"] <= 5.0]
+    lower_priority = pinch[pinch["distance_km"] > 5.0]
+    lower_priority.plot(ax=ax, color="#fee08b", markersize=30, marker="o", zorder=3,
+                         edgecolor="black", linewidth=0.4)
+    high_priority.plot(ax=ax, color="#d73027", markersize=55, marker="*", zorder=4,
+                        edgecolor="black", linewidth=0.5)
+
+    ax.set_title("Limpopo at a glance\n"
+                  f"{len(high_priority)} priority mine-restoration/connectivity opportunities identified",
+                  fontsize=13, weight="bold", loc="left")
+    ax.text(0.01, 0.01,
+            "Key implication: mines closest to protected areas are where\n"
+            "restoration could plausibly contribute to landscape\n"
+            "connectivity - proximity only, not a validated ecological\n"
+            "assessment (see report §7).",
+            transform=ax.transAxes, fontsize=8, ha="left", va="bottom",
+            style="italic", color="#333333",
+            bbox=dict(boxstyle="round", facecolor="white", alpha=0.9, edgecolor="#cccccc"))
+    handles = [
+        Line2D([0], [0], marker="*", color="w", markerfacecolor="#d73027", markeredgecolor="black",
+               markersize=14, label="Priority (mine <= 5 km from a protected area)"),
+        Line2D([0], [0], marker="o", color="w", markerfacecolor="#fee08b", markeredgecolor="black",
+               markersize=9, label="Secondary (mine 5-10 km from a protected area)"),
+        Patch(facecolor="#1a9850", edgecolor="#1a9850", alpha=0.35, label="Documented TFCA context (GLTFCA/GMTFCA)"),
+        Patch(facecolor="#cccccc", edgecolor="#888888", alpha=0.4, label="Other protected area"),
+    ]
+    ax.legend(handles=handles, loc="upper left", fontsize=7.5, framealpha=0.9)
+    ax.text(0.99, 0.01, "CRS: ESRI:102022 (Africa Albers Equal Area Conic) | Sources: OSM, Wikidata",
+            transform=ax.transAxes, fontsize=6, ha="right", va="bottom", color="#555555")
+    fig.tight_layout()
+    fig.savefig(config.OUTPUT_MAPS / "00_limpopo_at_a_glance.png", dpi=150)
+    plt.close(fig)
+    print(f"  wrote 00_limpopo_at_a_glance.png ({len(high_priority)} priority + {len(lower_priority)} secondary)")
 
 
 def map_01_regional_context():
@@ -204,6 +259,7 @@ def map_04_restoration_priorities():
 
 
 def main():
+    map_00_limpopo_at_a_glance()
     map_01_regional_context()
     map_02_mining_pressure()
     map_03_connectivity_opportunities()
