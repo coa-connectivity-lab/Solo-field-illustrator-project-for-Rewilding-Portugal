@@ -1,71 +1,136 @@
-# Ermo das Águias — Desk Study Ahead of Tomorrow's Visit
+# Ermo das Águias — Field Visit Note
 
-Survey123 form: `coa-connectivity-lab-survey` (Greater Côa Valley Multi-Species Connectivity Field Survey — see `survey123/survey123-arcgis-surveys-49049bbd82564ead968d8cc6e90f0de2-design.pdf`)
+**Survey123 form:** `coa-connectivity-lab-survey` (Greater Côa Valley Multi-Species Connectivity Field Survey)
 
-Source data: `survey123/ Ermo das Águias/` (folder exists, currently empty — no field photos yet) and `field-notes/2026-08-23-Ermo-das-Aguias` (desk-research summary, sourced 22 August 2026, ahead of the planned visit)
+**Visit date:** 24 August 2026
+**Location:** Ermo das Águias / Vale de Madeira, Pinhel, Greater Côa Valley
+**Visit status:** Field visit completed.
 
-Ermo das Águias is one of two sites Linda plans to visit tomorrow (23 August 2026), alongside Ribeira do Mosteiro (`2026-08-23-Ribeira-do-Mosteiro-Desk-Study.md`). This note is a desk-study pre-visit note, built from research gathered the day before rather than from field observation — no visit-header/GPS/weather table, following the established desk-study convention (see `deskStudy/` notes elsewhere in this project). It's structured to match the survey123 form's species/habitat/barrier fields so it can be converted directly into a real visit note once photos exist.
+## Sources and field verification
 
-## Location and relationship to the Côa River
+This note combines **direct observations made during the visit on 24 August 2026** with information referenced and **cross-checked against the field records of João Barbeiro**. João Barbeiro's records were used to confirm and contextualise observations concerning the landscape, vegetation, agricultural land use, reservoir/wetland and surrounding semi-natural habitat.
 
-Ermo das Águias is **on the left bank of the Côa River**, near Vale de Madeira in Pinhel municipality. Rewilding Portugal and Wildlife Portugal both explicitly describe the rewilding area as occupying the left bank of the Côa, in a steep section of the river valley marked by granite outcrops, rocky slopes and cliffs. It is therefore a **Côa River site**, unlike Ribeira do Mosteiro, which is associated with the Douro. ([Wildlife Portugal][1])
+The previous desk-study information has also been retained where relevant, but species or habitat details that were not directly observed or confirmed through João Barbeiro's records should continue to be treated as desk-study information rather than as personal field observations.
 
-**Reference GPS for Vale de Madeira / approach:** `40.7732867, -7.0227774` (WGS84). This is the location coordinate published by Rewilding Portugal for Vale de Madeira, rather than a GPS fix for the reserve itself. ([Rewilding Portugal][2])
+**Reference sources:**
 
-**Reserve access:** the Ermo das Águias entrance is approximately **2 km from Vale de Madeira**, reached by a rural track descending from the village to Ribeira de Gaiteiros. ([Wildlife Portugal][1])
+* **João Barbeiro — field records / guide records**, consulted and used to cross-check the observations from the 24 August 2026 visit.
+* Rewilding Portugal — *Ermo das Águias*, site description and rewilding context.
+* Wildlife Portugal — *Ermo das Águias — área rewilding*, habitat, fauna, flora and access information.
+* Wildlife Portugal — botanical information on Ermo das Águias.
 
-**Distance to the Côa River:** **effectively 0 km at the river-facing part of the Ermo das Águias site**. The reserve occupies the Côa valley slope and its western/river-facing edge reaches the Côa; the site should therefore not be described as being “2 km from the Côa.” The approximately 2 km figure refers to the **access route from Vale de Madeira to the reserve entrance**, not the distance from Ermo das Águias to the river. Wildlife Portugal specifically describes the area as being on the left bank of the Côa and notes that the river is accessible from the site. ([Wildlife Portugal][1])
+## Field observations — 24 August 2026
 
-For the field visit, the **actual Survey123 GPS should supersede these desk-study coordinates** and should be recorded at the observation/access point used by Linda.
+### Dam, reservoir and wetland
 
-## Habitat description
+During the visit, I observed a **dam/reservoir with associated wetland and wetter vegetation** within the otherwise dry, rocky landscape.
 
-Left bank of the Côa, near Vale de Madeira (Pinhel municipality), a granite-dominated landscape of roughly 600–1000 ha (range depending on source) with extensive rocky outcrops. Access is a rural track descending from the village to Ribeira de Gaiteiros, where the reserve entrance sits, about 2 km from Vale de Madeira. ([Wildlife Portugal][1])
+The waterbody and its margins form a noticeably greener and more vegetated habitat compared with the surrounding slopes. This creates an important local contrast between aquatic/wetland habitat and the surrounding dry Mediterranean-type vegetation.
 
-The site carries a long land-use history: cereal cultivation, olive groves, and intensive grazing, followed by recurrent fires — most recently a fire in August 2025 that burned around 300 ha, spreading from a Cinco Vilas fire into neighbouring Pinhel (all animals reportedly survived, per Rewilding Portugal's own statement). Only extensive cork oak patches persisted through the repeated fire history, thanks to cork's commercial value and fire resistance; the rest of the landscape is now dominated by white broom (*Cytisus multiflorus*) following land abandonment. Wildlife Portugal's botanical account additionally describes recovering Pyrenean oak (*Quercus pyrenaica*) on north-facing slopes and holm oak (*Quercus rotundifolia*) in sheltered valleys. ([Wildlife Portugal][3])
+The presence of the reservoir/wetland should therefore be considered in the connectivity assessment as both a **water resource and habitat feature**, rather than automatically being classified as a barrier.
 
-## Species observations — desk research, not field-confirmed
+The identification and interpretation of this feature were **referenced and checked against João Barbeiro's records**.
 
-**None of the entries below are Linda's own field observations — no photos exist yet for this site.** All content is sourced from the desk-research summary in `field-notes/2026-08-23-Ermo-das-Aguias`, itself compiled from web search snippets and Rewilding Portugal's own published material ahead of the visit. Treat every row as unconfirmed pending the actual visit.
 
-| # | Functional group                                     | Species name or common name                  | Notes                                                                                                                                                                                                           |
-| - | ---------------------------------------------------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 | Herbivore, equid (rewilding-introduced)              | Sorraia horse, *Equus ferus caballus*        | Semi-wild herd, "more than two dozen" individuals per desk research, dun/grullo colouring with primitive markings, indigenous to SW Iberia, introduced 2022                                                     |
-| 2 | Herbivore, bovid (rewilding-introduced)              | Tauros cattle, *Bos taurus* (back-bred type) | Herd of 15 released April 2023, cross of rustic Iberian breeds including Maronesa with aurochs-related ancestry; partner organisation Stichting Taurus                                                          |
-| 3 | Shrub                                                | White broom, *Cytisus multiflorus*           | Now the dominant shrub across the site                                                                                                                                                                          |
-| 4 | Woodland tree                                        | Cork oak, *Quercus suber*                    | Surviving patches — the main tree cover to persist through repeated fires, due to cork's commercial value and fire resistance                                                                                   |
-| 5 | Predator (landscape-managed, not confirmed resident) | Iberian wolf, *Canis lupus signatus*         | Site falls within the LIFE WolfLux project area, which manages habitat conditions for wolf subpopulations south of the Douro; not necessarily resident, but the landscape is managed with wolf presence in mind |
 
-The desk-research source also flags one further lead not yet followed up: Wildlife Portugal's "Botanical endemisms of Ermo das Águias" discusses how horse movement through the broom is opening space for greater plant diversity and dispersal. The full source identifies recovering Pyrenean oak and holm oak in addition to cork oak, and describes increased plant diversity associated with horse movement through the broom. ([Wildlife Portugal][3])
+### Small-scale agricultural mosaic
 
-Wildlife Portugal also records a broader fauna associated with the site and Côa valley, including griffon vulture, golden eagle, black stork, grey heron, kingfisher, dipper and Mediterranean pond turtle; these remain desk-research leads rather than Linda's observations for tomorrow. ([Wildlife Portugal][1])
+Around the reservoir and along the road I observed a **mixed mosaic of small agricultural plots**, including:
 
-## Connectivity barriers — desk research, not field-confirmed
+* vineyards / grape vines;
+* fig trees;
+* almond trees;
+* small mixed cultivated plots;
+* vegetated margins between agricultural areas.
 
-None identified yet from desk research. The August 2025 fire (see Habitat description) is itself worth logging as a temporary vegetation-cover disturbance once on site, in the same way the Amoreira/Castelo Mendo fire was logged as a connectivity event rather than a physical barrier in `field-trips/2026-08-16-Wildfire-Damage-Amoreira-Castelo-Mendo.md` — worth checking whether the 2025 burn scar is still visible in the landscape and whether it's shaping current horse/cattle grazing patterns.
+This is a relatively fine-grained agricultural landscape rather than a large area of intensive monoculture.
 
-The Côa itself should **not** automatically be treated as a connectivity barrier: at Ermo das Águias the conservation site is deliberately situated along the river corridor, and the river forms part of the ecological landscape being studied. The field visit should document any actual movement constraint observed rather than presuming that the river is a barrier.
+The combination of vines, fruit trees, field margins and surrounding semi-natural vegetation creates a complex transition between cultivated and wild habitats. This agricultural mosaic was also **cross-referenced with João Barbeiro's records**.
 
-## Open items
+### Semi-natural landscape across the road
 
-* **This entire note needs replacing with real field data after tomorrow's visit.** Every species and habitat claim above is desk research, not observation — update with actual photos, confirmed sightings, and a proper visit-header table (date, time, GPS, weather, light) once the visit happens.
+On the other side of the road, the landscape changes markedly into a more **wild and semi-natural area**, characterised by:
 
-* The Sorraia herd count ("more than two dozen") and Tauros herd count (15, released April 2023) should both be re-verified on site rather than taken as current — herd numbers from a rewilding reintroduction can change quickly.
+* exposed **granite outcrops**;
+* rocky slopes;
+* rosemary;
+* oak;
+* low Mediterranean-type scrub;
+* other characteristic dryland vegetation.
 
-* The Wildlife Portugal botanical source is worth reviewing before the visit, particularly for plant-diversity effects associated with horse grazing and movement.
+The contrast between the two sides of the road is particularly notable: the agricultural side contains vines, figs, almonds and wetter vegetation, while the opposite side is dominated by granite, scrub and oak.
 
-* **GPS/access point:** use `40.7732867, -7.0227774` as the published Vale de Madeira reference coordinate, but do not treat it as the reserve's precise field GPS. The reserve entrance is approximately 2 km down the rural track toward Ribeira de Gaiteiros. Capture the actual access/observation GPS in Survey123 during the visit. ([Rewilding Portugal][2])
+This transition was **referenced and confirmed against João Barbeiro's field records**.
 
-* **Côa River relationship:** Ermo das Águias is on the **left bank of the Côa**. At the river-facing part of the reserve, the distance to the Côa is effectively **0 km**; the approximately **2 km** figure is the access distance from Vale de Madeira to the reserve entrance, not the river distance. ([Wildlife Portugal][1])
+## Habitat mosaic
+
+The visit therefore identified a particularly varied local habitat mosaic consisting of:
+
+1. Reservoir / dam
+2. Wetland and wetter riparian vegetation
+3. Small agricultural plots
+4. Vineyards
+5. Fig and almond trees
+6. Field and roadside margins
+7. Granite outcrops
+8. Dry Mediterranean scrub
+9. Oak vegetation
+10. Wider semi-natural / rewilding landscape
+
+The combination of these habitats is important for understanding connectivity at the site scale. The reservoir provides water and wetland habitat, while the agricultural plots, fruit trees, scrub, oak and granite landscape provide different forms of food, shelter and movement habitat.
+
+## Connectivity observations
+
+A particularly important feature of the site is the **transition between the agricultural mosaic and the semi-natural landscape across the road**.
+
+The landscape can broadly be described as:
+
+**reservoir/wetland → small agricultural plots → vines, figs and almonds → road → granite outcrops, rosemary, oak and Mediterranean scrub**
+
+This should be considered a **habitat transition rather than simply a barrier**. The road may represent a potential movement constraint, but its actual significance depends on traffic, fencing, vegetation continuity and observed animal movements.
+
+The reservoir should similarly not automatically be classified as a barrier. It may constrain some terrestrial movements locally while providing an important water and wetland resource.
+
+These observations and their interpretation were **checked against João Barbeiro's records** as part of the field-note preparation.
+
+## Vegetation
+
+The field visit confirmed a dry, rocky Mediterranean-type vegetation structure, with **rosemary, oak and other characteristic scrub vegetation associated with the granite outcrops**.
+
+The agricultural side of the landscape adds cultivated woody vegetation, particularly **fig and almond trees**, as well as vineyards.
+
+The wider botanical information for Ermo das Águias records cork oak, holm oak, Pyrenean oak and white broom, among other species. These wider records should remain distinguished from plants personally identified during this visit unless confirmed from the field photographs or João Barbeiro's records.
+
+## Land-use context
+
+The field observations show that the wider rewilding landscape still contains a **traditional small-scale agricultural mosaic**, alongside areas that have a much more natural or semi-natural character.
+
+This is significant for the connectivity assessment because the landscape is not divided simply into “agricultural” and “wild” blocks. Instead, there is a sequence of relatively small habitat patches and edges, including orchards, vineyards, wet areas, scrub and rocky terrain.
+
+The field observations were **cross-referenced with João Barbeiro's records**, which were used to confirm the interpretation of this landscape mosaic.
+
+## Species observations
+
+Species should only be recorded as direct field observations where they were actually seen or otherwise confirmed during the visit.
+
+The wider desk-study species list remains useful as a set of potential records for the site, including Sorraia horse, Tauros cattle, griffon vulture, golden eagle, black stork, grey heron, kingfisher, dipper and Mediterranean pond turtle.
+
+These should not be presented as observations from this visit unless supported by the field photographs, Survey123 records or **João Barbeiro's records where explicitly documented there**.
+
+## Overall field assessment
+
+The visit confirmed that Ermo das Águias is a **highly heterogeneous landscape**, combining water and wetland habitat, small-scale agriculture and orchards with a much more open, rocky and semi-natural landscape.
+
+The most significant feature from a connectivity perspective is the **close proximity of complementary habitats**:
+
+**water/wetland + agricultural mosaic + fruit trees/vines + granite outcrops + Mediterranean scrub + oak**
+
+The observations recorded during the visit were **referenced and cross-checked with João Barbeiro's field records**, providing an additional field-based reference for interpreting the landscape and vegetation.
 
 ## References
 
-* Desk-research summary compiled 22 August 2026, `field-notes/2026-08-23-Ermo-das-Aguias` — sourced from web search snippets and Rewilding Portugal's published material; exact URLs not captured in that file and should be re-sourced if cited externally.
-* Rewilding Portugal, **Ermo das Águias** — site description and Vale de Madeira location/access information. ([Rewilding Portugal][4])
-* Wildlife Portugal, **Ermo das Águias — área rewilding** — Côa River relationship, access route and habitat description. ([Wildlife Portugal][1])
-* Wildlife Portugal, **Botanical endemisms of Ermo das Águias** — vegetation and rewilding effects. ([Wildlife Portugal][3])
-
-[1]: https://wildlifeportugal.pt/percursos/ermo-das-aguias/?utm_source=chatgpt.com "Ermo das Águias - área rewilding"
-[2]: https://rewilding-portugal.com/pt/oeste-iberico/ermo-das-aguias/?utm_source=chatgpt.com "Ermo das Águias | Rewilding Portugal"
-[3]: https://wildlifeportugal.pt/en/?utm_source=chatgpt.com "Endemismos botânicos do Ermo das Águias - Wildlife Portugal"
-[4]: https://rewilding-portugal.com/greater-coa-valley/ermo-das-aguias/?utm_source=chatgpt.com "Ermo das Águias | Rewilding Portugal"
+* **João Barbeiro — field records / guide records**, consulted and cross-referenced following the 24 August 2026 visit.
+* Rewilding Portugal — *Ermo das Águias*, site description and rewilding context.
+* Wildlife Portugal — *Ermo das Águias — área rewilding*, habitat and landscape information.
+* Wildlife Portugal — botanical information on Ermo das Águias.
+* Previous desk-study note for Ermo das Águias, which provided the pre-visit research baseline.
