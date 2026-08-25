@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -A linda-fontainebleau-research/1.0 'https://www.wikidata.org/w/api.php?action=wbsearchentities&search=r%C3%A9serve%20biologique%20Fontainebleau&language=fr&format=json&limit=10')",
+      "Bash(python3 -c \"import json,sys; [print\\(x['id'],x['label'],x.get\\('description'\\)\\) for x in json.load\\(sys.stdin\\)['search']]\")",
+      "Bash(cat)",
+      "Bash(curl -s -X POST --data-urlencode data@/tmp/overpass_rbi.txt https://overpass-api.de/api/interpreter -A linda-fontainebleau-research/1.0 -o /tmp/rbi.json --max-time 40)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s \"https://api.gbif.org/v1/occurrence/search?class=Aves&decimalLongitude=2.45,2.85&decimalLatitude=48.30,48.50&hasCoordinate=true&limit=3\")",
+      "Bash(curl -s \"https://api.gbif.org/v1/occurrence/search?class=Mammalia&decimalLongitude=2.45,2.85&decimalLatitude=48.30,48.50&hasCoordinate=true&limit=3\")",
+      "Bash(curl -s \"https://api.gbif.org/v1/occurrence/search?kingdom=Plantae&decimalLongitude=2.45,2.85&decimalLatitude=48.30,48.50&hasCoordinate=true&limit=3\")",
+      "Bash(curl -s \"https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&decimalLongitude=2.45,2.85&decimalLatitude=48.30,48.50&hasCoordinate=true&limit=3\")",
+      "Bash(curl -s \"https://api.gbif.org/v1/occurrence/search?taxonKey=212&decimalLongitude=2.45,2.85&decimalLatitude=48.30,48.50&hasCoordinate=true&limit=3\")",
+      "Bash(curl -s \"https://api.gbif.org/v1/species/search?q=Reptilia&rank=CLASS&limit=5\")",
+      "Bash(curl -s \"https://api.gbif.org/v1/species/match?name=Squamata&rank=ORDER\")",
+      "Bash(curl -s -X POST --data-urlencode data@/tmp/overpass_facilities.txt https://overpass-api.de/api/interpreter -A linda-fontainebleau-research/1.0 -o /tmp/facilities.json --max-time 60)"
+    ]
+  }
+}
