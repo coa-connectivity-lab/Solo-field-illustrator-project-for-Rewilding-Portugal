@@ -140,6 +140,14 @@ def main():
     if fac:
         style_facilities(fac)
 
+    print("Fire history:")
+    grp_fire = root.addGroup("Fire history (MODIS MCD64A1.061, 2015-2025)")
+    fire = add_vector(DATA / "fontainebleau_fire_history.gpkg", "fire_history", "MODIS-detected burns", grp_fire)
+    if fire and fire.featureCount() > 0:
+        style_outline(fire, "#a50026", 1.0)
+    elif fire:
+        print("  (0 features - no MODIS-detected burns in the study window, skipping styling)")
+
     QGIS_OUT.parent.mkdir(parents=True, exist_ok=True)
     project.write(str(QGIS_OUT))
     print(f"\nWrote {QGIS_OUT}")

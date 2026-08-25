@@ -23,6 +23,19 @@ BOUNDARY_GPKG = DATA_PROCESSED / "fontainebleau_boundary.gpkg"
 PROTECTED_GPKG = DATA_PROCESSED / "fontainebleau_protected_areas.gpkg"
 SPECIES_GPKG = DATA_PROCESSED / "fontainebleau_species_occurrences.gpkg"
 FACILITIES_GPKG = DATA_PROCESSED / "fontainebleau_ecotourism_facilities.gpkg"
+FIRE_GPKG = DATA_PROCESSED / "fontainebleau_fire_history.gpkg"
+
+# Fire history source: NASA MODIS Burned Area Monthly (MCD64A1.061), served
+# no-auth as COGs via Microsoft Planetary Computer's STAC API - the same
+# source and the same reasoning as research/eco-connectivity/scripts/
+# acquire_fire_history.py (EFFIS's own historical burnt-area archive needs a
+# manual data-request form and its live WFS layer errored server-side).
+# FIRE_HISTORY_START matches that script's 10-recent-fire-seasons window for
+# comparability; there is no fixed end date - the script reports the true
+# last-available item date rather than assuming full coverage to today.
+FIRE_STAC_API_URL = "https://planetarycomputer.microsoft.com/api/stac/v1"
+FIRE_STAC_COLLECTION = "modis-64A1-061"
+FIRE_HISTORY_START = "2015-01-01"
 
 # CRS_DISPLAY matches OSM/Wikidata/GBIF native format.
 # CRS_METRIC: RGF93 / Lambert-93 (EPSG:2154) - France's own standard official

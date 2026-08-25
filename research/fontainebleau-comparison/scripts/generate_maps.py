@@ -139,10 +139,44 @@ def map_03_ecotourism_facilities():
     print("  wrote 03_ecotourism_facilities.png")
 
 
+def map_04_fire_history():
+    boundary = _load(config.BOUNDARY_GPKG, "fontainebleau_boundary")
+    pa = _load(config.PROTECTED_GPKG, "protected_areas")
+    fire = _load(config.FIRE_GPKG, "fire_history")
+
+    fig, ax = plt.subplots(figsize=(10, 9))
+    _base(ax, boundary)
+    rbi = pa[pa["designation"].str.contains("Intégrale", na=False)]
+    rbi.plot(ax=ax, facecolor="#cccccc", edgecolor="#888888", alpha=0.5, linewidth=0.6, zorder=1)
+
+    if not fire.empty:
+        fire.plot(ax=ax, facecolor="#a50026", edgecolor="#a50026", alpha=0.7, zorder=3, label="MODIS-detected burn")
+        title = f"Map 4 — Fire history, 2015–Jul 2025 (MODIS MCD64A1.061, n={len(fire)})"
+    else:
+        title = "Map 4 — Fire history, 2015–Jul 2025 (MODIS MCD64A1.061): no burns detected"
+        ax.text(0.5, 0.5, "No MODIS-detected burn pixels\nwithin the forest boundary in this window",
+                transform=ax.transAxes, fontsize=10, ha="center", va="center", color="#a50026",
+                style="italic")
+
+    ax.set_title(f"{title}\nGrey: Réserves Biologiques Intégrales (strict reserves), for spatial context",
+                  fontsize=12, weight="bold")
+    handles = [Patch(facecolor="#cccccc", edgecolor="#888888", alpha=0.6, label="Réserve Biologique Intégrale")]
+    if not fire.empty:
+        handles.append(Patch(facecolor="#a50026", edgecolor="#a50026", alpha=0.7, label="MODIS-detected burn"))
+    ax.legend(handles=handles, loc="upper left", fontsize=7, framealpha=0.9)
+    ax.text(0.99, 0.01, "MODIS MCD64A1.061 via Planetary Computer, 463 m px",
+            transform=ax.transAxes, fontsize=6, ha="right", va="bottom", color="#555555")
+    fig.tight_layout()
+    fig.savefig(config.OUTPUT_MAPS / "04_fire_history.png", dpi=150)
+    plt.close(fig)
+    print("  wrote 04_fire_history.png")
+
+
 def main():
     map_01_protected_areas()
     map_02_species_occurrences()
     map_03_ecotourism_facilities()
+    map_04_fire_history()
 
 
 if __name__ == "__main__":

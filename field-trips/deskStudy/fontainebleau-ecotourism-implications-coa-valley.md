@@ -11,7 +11,7 @@ Linda Angulo Lopez, compiled 25 August 2026, from 25 years of residence in Fonta
 | Personal context | 25 years' residence in Fontainebleau, France; volunteer ecological consulting; field guide work. No dated visit, no field photography on file for this study |
 | Site | Forêt de Fontainebleau, Seine-et-Marne, Île-de-France, roughly 60 km southeast of Paris |
 | Source | OpenStreetMap (Overpass API), Wikidata, GBIF Occurrence API, all confirmed reachable and queried live for this study, 25 August 2026 |
-| Companion data and QGIS deliverables | `research/fontainebleau-comparison/` (scripts, GeoPackages, `.qgz` project, three report maps) |
+| Companion data and QGIS deliverables | `research/fontainebleau-comparison/` (scripts, GeoPackages, `.qgz` project, four report maps) |
 
 **A source-reachability note worth stating directly, not burying.** INPN (`inpn.mnhn.fr`) and its taxonomic reference service TAXREF, France's official national biodiversity inventory and the natural authoritative source for this exact study, returned an HTTP 403 Cloudflare bot-check from this working environment, the same failure this project's own `research/eco-connectivity/scripts/acquire_unesco_heritage_zones.py` already documented for `whc.unesco.org`. INPN is run by the Muséum national d'Histoire naturelle, one of my own former employers (see `/my-cv`), which makes it a genuinely notable gap rather than an incidental one: the one authoritative source this study couldn't reach is the one built by the institution I used to work for. `data.gouv.fr`, France's open-data portal, is reachable and a plausible manual-upgrade path, not verified to hold a specific usable dataset in this pass.
 
@@ -61,6 +61,18 @@ Only one facility, a single trail-information point, falls literally inside a R�
 
 *Map 3. 648 climbing/bouldering features and 245 trail-information points against the strict-reserve network. The density pattern itself is this study's clearest visitor-pressure signal.*
 
+## Fire history, fact-checked
+
+New since this study's first pass. Same source and reasoning as this project's own `research/eco-connectivity/scripts/acquire_fire_history.py`: EFFIS's own historical burnt-area archive needs a manual data-request form and its live WFS burnt-area layer errored server-side, so this uses NASA's MODIS Burned Area Monthly product (MCD64A1.061), real satellite-derived burn history at 463 m pixel resolution, served no-auth as Cloud-Optimized GeoTIFFs via Microsoft Planetary Computer's STAC API, queried live for this study, 25 August 2026.
+
+**Zero MODIS-detected burn pixels inside the forest boundary, 2015 through the collection's true data-currency cutoff (day 182 of 2025, roughly 1 July 2025, the same global ingestion limit already documented in the eco-connectivity script, not a Fontainebleau-specific gap).** One single edge pixel (year 2021) fell inside the search bounding box but outside the real forest boundary polygon once clipped to the actual multipolygon, not counted as a forest fire. This is a genuine, checked absence of MODIS-detected fire, not a data gap: 124 monthly items were searched and processed for this footprint. At 463 m resolution MODIS can miss small fires (sub-hectare to a few hectares), so this doesn't rule out minor understorey or prescribed burns too small for the sensor, but it does rule out anything resembling the scale of fire documented elsewhere in this project's own field notes (see below).
+
+![Map 4: fire history, 2015-2025](../../research/fontainebleau-comparison/output/maps/04_fire_history.png)
+
+*Map 4. No MODIS-detected burn polygons within the forest boundary, 2015 through mid-2025. Réserves Biologiques Intégrales shown in grey for spatial context.*
+
+This is the sharpest possible contrast with this project's own field-recorded fire history: `field-trips/2026-08-16-Wildfire-Damage-Amoreira-Castelo-Mendo.md` documents a single 27-29 July 2026 wildfire that burned more than 5,000 ha across Almeida, Sabugal and Pinhel municipalities in the Côa Valley study area, over 30 times Fontainebleau's entire core forest area, in two days. Fontainebleau, by this MODIS record, has had no fire of comparable scale in a full decade.
+
 ## What this could mean for the Greater Côa Valley
 
 Camargue's comparison was about working-landscape tenure. Limpopo's was about mining and connectivity. Fontainebleau's lesson is different again, and it is the one the Côa Valley has arguably encountered least so far: what happens to a small, ecologically fragile protected landscape once visitor numbers get large. Fontainebleau is one of the most-visited forests in Europe, globally famous for bouldering, on a core footprint smaller than the Côa study area itself. Each point below follows this project's standing rule for comparative work, land it in a concrete, adoptable implication, not just a description of how Fontainebleau does it.
@@ -73,12 +85,15 @@ Camargue's comparison was about working-landscape tenure. Limpopo's was about mi
 
 **4. Mass recreational tourism and biodiversity conservation running on the same land, not sequentially.** Fontainebleau doesn't zone climbers into one area and biodiversity into another as separate uses of separate land, the 648 climbing features and the 17 Réserves Biologiques occupy the same 153 km², managed through the RBI/RBD tiering rather than physical separation. **Implication:** as Côa Valley ecotourism grows past its current small scale, the temptation will be to treat "safari/wildlife-viewing zone" and "strict conservation zone" as necessarily separate areas. Fontainebleau's model says that's not the only workable approach, a tiered-access model on shared land, with the access tier tightly correlated to ecological sensitivity rather than to a hard geographic split, is a real, functioning alternative worth designing toward rather than assuming away.
 
-Why has the Côa Valley not yet had to answer the question Fontainebleau's whole management model is built around, what happens once a small protected landscape gets genuinely popular?
+**5. A fire-free decade is itself part of why Fontainebleau's management model can afford to be fine-grained.** Zero MODIS-detected burns inside the forest boundary across a full ten-year window (2015-mid-2025) is not incidental to points 1-4 above, a tiered RBI/RBD reserve network, dense shared-use recreational infrastructure, and stacked designations all presuppose a landscape stable enough to manage on decade-long silvicultural and conservation timescales. The Côa Valley's own July 2026 fire (`field-trips/2026-08-16-Wildfire-Damage-Amoreira-Castelo-Mendo.md`, 5,000+ ha, three municipalities, two days) is the kind of event that erases that stability assumption overnight, canopy, understorey, and any fine-grained zoning drawn on top of them, across an area over 30 times Fontainebleau's entire core forest, in one event. **Implication:** the Côa Valley cannot import Fontainebleau's zoning model wholesale without first importing fire risk into the design, any tiered strict-reserve/managed-buffer system built for the Côa Valley (point 1) needs its own fire-adapted variant, defensible-space buffers around RBI-equivalent strict zones, fuel management as an explicit management category Fontainebleau's own decade of stability didn't force it to prioritise, and a monitoring cadence (this study used the same 463 m MODIS product now proposed for the Côa Valley's own resistance-surface pipeline) that treats fire as a recurring planning input, not an occasional shock.
+
+Why has the Côa Valley not yet had to answer the question Fontainebleau's whole management model is built around, what happens once a small protected landscape gets genuinely popular, when it is also answering a question Fontainebleau's own decade of data suggests it has not had to face at anything like the same scale: what happens after fire?
 
 ## Open items
 
 - *Lacerta agilis* (sand lizard), commonly associated with Fontainebleau's sand-heathland "platières" in general literature, did not appear in this study's 300-record capped Squamata pull. Worth a targeted, uncapped GBIF query for that species specifically if a future pass needs to confirm its presence here rather than relying on general reputation.
 - The 280.92 km² (Wikidata) vs 153.0 km² (this study's OSM-derived) area discrepancy for the core forest is unresolved, stated as a hypothesis (broader massif vs. core state forest) rather than fact, in the interest of not silently picking a number.
+- The fire-history record (zero MODIS-detected burns, 2015-mid-2025) is bounded by MODIS's own 463 m pixel resolution, small fires (sub-hectare to a few hectares) could be missed entirely. BDIFF (France's official forest-fire database, run by the same ministry lineage as ONF) or `data.gouv.fr` would be the natural manual-upgrade path to confirm the true absence of small fires rather than relying on satellite detection alone, not yet checked in this pass.
 - INPN/TAXREF, the natural authoritative source for this exact study and one built by my own former employer, was unreachable (HTTP 403) from this environment. If a future session can reach it directly, cross-checking the Réserve Biologique network and species records against INPN's own data would materially strengthen this study.
 - No ONF/park visitor-centre point was found in this OSM query. Worth checking directly (a site visit, or a more targeted search of `data.gouv.fr`) rather than treating the absence as confirmed.
 - This study's personal-context framing states only what I gave it directly, 25 years' residence, volunteer ecological consulting, field-guide work, with no further specifics invented. If I want this richer for a future version (specific years, organisations, species I actually guided visitors to), that detail needs to come from me directly, not be inferred.
@@ -89,6 +104,8 @@ Why has the Côa Valley not yet had to answer the question Fontainebleau's whole
 - `safari-upscaling-coa-valley-limpopo.md` - the Côa Valley's own current tourism-infrastructure baseline (point 2 above) and the UNESCO World Heritage designation this note's point 3 builds on.
 - `wildlife-relations-portugal-vs-south-africa.md` - the Faia Brava private-reserve governance model point 1 above proposes extending with a tiered internal zoning.
 - `research/eco-connectivity/scripts/acquire_unesco_heritage_zones.py` - the earlier documented instance of the same Cloudflare-bot-check failure mode (there, `whc.unesco.org`; here, `inpn.mnhn.fr`) this note's source-reachability section cites directly.
+- `research/eco-connectivity/scripts/acquire_fire_history.py` - the earlier instance of this same EFFIS-unreachable / MODIS-MCD64A1-via-Planetary-Computer acquisition pattern this note's fire-history section reuses directly, and the source of point 5's fire-risk framing.
+- `field-trips/2026-08-16-Wildfire-Damage-Amoreira-Castelo-Mendo.md` - the Côa Valley's own field-documented 2026 wildfire, the direct contrast point 5's fire-history comparison is built on.
 
 ## QGIS mapping methodology
 
@@ -100,6 +117,8 @@ Why has the Côa Valley not yet had to answer the question Fontainebleau's whole
 
 **Map 3, ecotourism facilities.** 896 points, climbing areas and trail-information points at low opacity (chosen specifically so density reads visually rather than individual points), named parking as solid markers, RBI reserves in red for context. Processing: a 2 km buffer around the forest boundary, not a hard clip, applied before counting, since real trailhead/parking infrastructure often sits just outside the strict polygon.
 
+**Map 4, fire history.** NASA MODIS Burned Area Monthly (MCD64A1.061), 463 m pixels, via Microsoft Planetary Computer's STAC API, same source and script pattern as `research/eco-connectivity/scripts/acquire_fire_history.py`. Unlike that raster-covariate pipeline, this study's own pipeline is vector-based throughout, so the accumulated "last burn year seen" grid is polygonized, dissolved by year, and clipped to the real forest boundary polygon (not just its bounding box) rather than kept as a raster. 124 monthly items searched, 2015-01-01 through the collection's true data-currency cutoff (day 182/2025, ~1 July 2025, the same global ingestion limit already documented for the Côa Valley pipeline). Result: zero polygons, no MODIS-detected burn intersects the forest boundary in this window. RBI reserves shown in grey for spatial context, same as Map 2.
+
 ## References
 
 ### Fontainebleau geography and designations
@@ -108,6 +127,9 @@ Why has the Côa Valley not yet had to answer the question Fontainebleau's whole
 
 ### Species data
 - [GBIF Occurrence API](https://api.gbif.org/v1/occurrence/search) - live queries, 25 August 2026, `taxonKey` values verified via `/v1/species/match`: Mammalia 359, Aves 212, Squamata 11592253, Amphibia 131, Insecta 216, Tracheophyta 7707728
+
+### Fire history
+- [MODIS Burned Area Monthly (MCD64A1.061) via Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/dataset/modis-64A1-061) - live STAC query, 25 August 2026, collection `modis-64A1-061`, 124 monthly items, 2015-01-01 through the collection's true data-currency cutoff (day 182/2025, ~1 July 2025)
 
 ### Sources checked but unreachable (see report body)
 - [INPN - Inventaire National du Patrimoine Naturel](https://inpn.mnhn.fr) - HTTP 403 Cloudflare bot-check from this environment
@@ -121,4 +143,4 @@ Why has the Côa Valley not yet had to answer the question Fontainebleau's whole
 
 ### QGIS deliverable (this note's companion map)
 - `research/fontainebleau-comparison/qgis/fontainebleau_ecotourism.qgz`
-- `research/fontainebleau-comparison/scripts/acquire_boundary.py`, `acquire_protected_areas.py`, `acquire_species_occurrences.py`, `acquire_ecotourism_facilities.py`, `build_qgis_project.py`, `generate_maps.py`
+- `research/fontainebleau-comparison/scripts/acquire_boundary.py`, `acquire_protected_areas.py`, `acquire_species_occurrences.py`, `acquire_ecotourism_facilities.py`, `acquire_fire_history.py`, `build_qgis_project.py`, `generate_maps.py`
