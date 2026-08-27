@@ -18,7 +18,17 @@
       "WebFetch(domain:www.birdingplaces.eu)",
       "Bash(xargs -I{} echo {})",
       "Bash(gh auth *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(gh gist *)",
+      "Bash(python3 /tmp/claude-1000/-home-linda-Documents-myData-Solo-field-illustrator-project-for-Rewilding-Portugal/52878d7c-6b00-4072-96d5-77a149116451/scratchpad/edit_nb2.py)",
+      "Bash(python3 -c \"import nbformat; nb=nbformat.read\\('research/eco-connectivity/notebook/coa_eco_connectivity_story_v6.ipynb', as_version=4\\); nbformat.validate\\(nb\\); print\\('valid,', len\\(nb.cells\\), 'cells'\\)\")",
+      "Bash(python3 /tmp/claude-1000/-home-linda-Documents-myData-Solo-field-illustrator-project-for-Rewilding-Portugal/52878d7c-6b00-4072-96d5-77a149116451/scratchpad/edit_nb3.py)",
+      "Bash(python3 /tmp/claude-1000/-home-linda-Documents-myData-Solo-field-illustrator-project-for-Rewilding-Portugal/52878d7c-6b00-4072-96d5-77a149116451/scratchpad/edit_nb4.py)",
+      "Bash(python3 /tmp/claude-1000/-home-linda-Documents-myData-Solo-field-illustrator-project-for-Rewilding-Portugal/52878d7c-6b00-4072-96d5-77a149116451/scratchpad/edit_nb5.py)",
+      "Bash(python3 -c \"import sys; [print\\(l.rstrip\\(\\)\\) for l in sys.stdin]\")",
+      "Bash(git --no-pager diff -- research/eco-connectivity/notebook/coa_eco_connectivity_story_v6.ipynb)",
+      "Read(//home/linda/personal_knowledge_base/**)"
     ]
   }
 }
