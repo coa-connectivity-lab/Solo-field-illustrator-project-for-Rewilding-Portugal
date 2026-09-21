@@ -18,6 +18,8 @@ Sources:
     si.icnf.pt, ICNF's own GeoServer (https://geocatalogo.icnf.pt/).
 """
 
+import os
+
 import geopandas as gpd
 import requests
 
@@ -78,6 +80,12 @@ def fetch_hunting_zones(study_area_display: gpd.GeoDataFrame) -> gpd.GeoDataFram
 
 
 def main() -> None:
+    # Reuse the shipped layer (collaborators' data bundle) unless a refresh is asked for.
+    # To re-download from Nominatim/ICNF (needs internet): REFRESH_LAND_TENURE=1
+    if OUT_GPKG.exists() and not os.environ.get("REFRESH_LAND_TENURE"):
+        print(f"Using existing {OUT_GPKG.name} (set REFRESH_LAND_TENURE=1 to re-download)")
+        return
+
     study_area = gpd.read_file(config.DATA_PROCESSED / "study_area.gpkg", layer="study_area")
     study_area_display = study_area.to_crs(config.CRS_DISPLAY)
 
