@@ -11,7 +11,7 @@
 
 ## Where it is published
 
-On 2026-09-26 the bundle was uploaded to data.gouv.fr under the organisation **Côa Connectivity Lab** (website: https://github.com/coa-connectivity-lab). data.gouv.fr replaces Recherche Data Gouv, which was only tried on its demo instance (see flaw xiv).
+The bundle is published on data.gouv.fr as **Côa Valley Eco-Connectivity v6 (CCL_v6)**: <https://www.data.gouv.fr/datasets/coa-valley-eco-connectivity-v6> (last updated 2026-09-26, Licence Ouverte / Open Licence 2.0, published by the Côa Connectivity Lab organisation).
 
 The organisation describes itself as an open, volunteer research collective building a reproducible ecological connectivity workflow for resource-limited rewilding projects, with the Greater Côa Valley as the worked case study. It uses only open data (GBIF, Natura 2000) and free software (Python, PostgreSQL/PostGIS, QGIS), and publishes the datasets behind the workflow and its notebook so other restoration teams can reuse them. Code: https://github.com/coa-connectivity-lab/eco-connectivity-workflow (MIT).
 
@@ -104,7 +104,7 @@ What you cannot do:
 
 (iv) Treat the layers as final evidence. They come from a single-model, single-parameter run with no uncertainty, over one 30 km study area, with field data from one trip (see Flaws below).
 
-(v) Cite it with a DOI. data.gouv.fr does not issue DOIs, so cite the dataset URL on data.gouv.fr instead.
+(v) Cite it with a DOI. data.gouv.fr does not issue DOIs, so cite https://www.data.gouv.fr/datasets/coa-valley-eco-connectivity-v6 instead.
 
 ## Flaws
 
@@ -148,4 +148,4 @@ What you cannot do:
 
 (xiii) The README names Copernicus land cover and imperviousness as sources, but those layers are not shipped, only surfaces derived from them.
 
-(xiv) The demo instance (demo.recherche.data.gouv.fr) was a test environment and its DOI is not a persistent citation. It is superseded by the data.gouv.fr deposit (see "Where it is published").
+(xiv) The demo instance (demo.recherche.data.gouv.fr) was a test environment and its DOI is not a persistent citation. Cite the data.gouv.fr dataset instead (see "Where it is published").
