@@ -1,13 +1,21 @@
 # About the data bundle
 
-**Summary**: How the core data bundle for `notebook/coa_eco_connectivity_story_v6.ipynb` was extracted from the working project, what is in it, and the flaws known so far.
-**Last updated**: 2026-09-21 (notebook switch added and tested)
+**Summary**: How the core data bundle for `notebook/coa_eco_connectivity_story_v6.ipynb` was extracted from the working project, where it is published, what each file is, and the flaws known so far.
+**Last updated**: 2026-09-26 (published on data.gouv.fr, file descriptions added)
 
 ---
 
 ## Why a bundle
 
-`.gitignore` excludes `*.tif`, `*.gpkg` and `*.zip`. GitHub therefore holds the notebook, `config.py`, the scripts and the 28 map PNGs, but none of the data. The bundle (`coa-eco-connectivity-data-v6.zip`, about 34 MB zipped, 43 MB unzipped) is meant to be deposited on Recherche Data Gouv and unzipped over a clone of the repository, keeping the folder layout `research/eco-connectivity/{data/processed, output/rasters}`.
+`.gitignore` excludes `*.tif`, `*.gpkg` and `*.zip`. GitHub therefore holds the notebook, `config.py`, the scripts and the 28 map PNGs, but none of the data. The bundle (`coa-eco-connectivity-data-v6`, 29 files, about 34 MB zipped, 43 MB unzipped) is published on data.gouv.fr and is meant to be unzipped over a clone of the repository, keeping the folder layout `research/eco-connectivity/{data/processed, output/rasters}`.
+
+## Where it is published
+
+On 2026-09-26 the bundle was uploaded to data.gouv.fr under the organisation **Côa Connectivity Lab** (website: https://github.com/coa-connectivity-lab). data.gouv.fr replaces Recherche Data Gouv, which was only tried on its demo instance (see flaw xiv).
+
+The organisation describes itself as an open, volunteer research collective building a reproducible ecological connectivity workflow for resource-limited rewilding projects, with the Greater Côa Valley as the worked case study. It uses only open data (GBIF, Natura 2000) and free software (Python, PostgreSQL/PostGIS, QGIS), and publishes the datasets behind the workflow and its notebook so other restoration teams can reuse them. Code: https://github.com/coa-connectivity-lab/eco-connectivity-workflow (MIT).
+
+Collaborators: on the same day, five people were invited to the organisation as **Partial editors**, each with a note pointing to the v6 notebook on `main` (`research/eco-connectivity/notebook/coa_eco_connectivity_story_v6.ipynb`) and saying the data bundle for it is uploaded there. The invitations were still pending on 26 September.
 
 ## Logic of the extraction
 
@@ -33,6 +41,51 @@ Then a README (licence Etalab 2.0, sources, how to use) and `MANIFEST.csv` (path
 | `data/processed/resistance/` | land, land without fire, water, air |
 | `output/rasters/` | Omniscape-style current flow, normalised current, multispecies, trade-off classes |
 
+## File descriptions
+
+The descriptions used for each resource on data.gouv.fr (all under 200 characters). Paths are relative to `research/eco-connectivity/`. Sources: the bundle's `README.txt`, `config.py` and `scripts/build_tradeoff_maps.py`.
+
+### Documentation
+
+- `README.txt`: How to use the bundle: setup steps, file list, CRS (EPSG:3035, 100 m grid), data sources, licence (Etalab 2.0) and how to cite. Start here.
+- `MANIFEST.csv`: Path, size in bytes and SHA-256 checksum of every file in the bundle, to check that downloads are complete and unchanged.
+
+### Vector data
+
+- `data/processed/study_area.gpkg`: Study area (30 km around the Côa river), Côa centreline and catchment rivers (HydroRIVERS). EPSG:3035.
+- `data/processed/field_observations.gpkg`: Field data from the August 2026 visits: 26 visited sites, 26 species records and 25 barrier observations with permeability notes. EPSG:4326.
+- `data/processed/land_tenure.gpkg`: Land tenure: Faia Brava private reserve and ICNF hunting zones (zonas de caça). Used as constraints for corridor design. EPSG:3035.
+- `data/processed/heritage_protection.gpkg`: Heritage areas: UNESCO Alto Douro Wine Region and the Côa Valley rock-art core. Used as a conflict penalty in resistance surfaces. EPSG:3035.
+
+### Covariates
+
+- `data/processed/covariates/distance_to_road_m.tif`: Distance to the nearest road in metres (OpenStreetMap). 100 m grid, EPSG:3035. Input to land resistance and the road trade-off maps.
+- `data/processed/covariates/fire_last_burn_year.tif`: Year each cell last burned, 2015-2025 (NASA MODIS MCD64A1 burned area). 100 m grid, EPSG:3035. Adds a fire penalty to land resistance.
+
+### Resistance surfaces
+
+- `data/processed/resistance/land_resistance.tif`: Movement resistance for the Land group (wolf, wildcat, red deer), with fire, field-barrier and heritage penalties. 100 m grid, EPSG:3035.
+- `data/processed/resistance/land_resistance_no_fire.tif`: Land group resistance without the fire penalty, to compare with land_resistance.tif and isolate the effect of recent fires. 100 m grid, EPSG:3035.
+- `data/processed/resistance/water_resistance.tif`: Resistance for the Water group (otter, Iberian nase, calandino, pond turtle), incl. field-recorded dams, weirs and culverts. 100 m, EPSG:3035.
+- `data/processed/resistance/air_resistance.tif`: Resistance for the Air group (griffon vulture, Egyptian vulture, golden eagle), after Prima et al. (2024). 100 m grid, EPSG:3035.
+
+### Connectivity outputs
+
+- `output/rasters/{land,water,air}_current_flow.tif`: Cumulative current flow for each group from circuit-theory connectivity analysis. High values show likely movement routes.
+- `output/rasters/{land,water,air}_flow_potential.tif`: Flow potential for each group: current expected if resistance were uniform. Used to normalise current flow.
+- `output/rasters/{land,water,air}_normalized_current.tif`: Normalised current for each group (current flow / flow potential). Above 1: channelled corridors; below 1: impeded movement.
+- `output/rasters/multispecies_mean_connectivity.tif`: Multispecies connectivity: species-count-weighted mean of the Land, Water and Air normalised current. Fire- and catchment-aware.
+- `output/rasters/multispecies_max_connectivity.tif`: Multispecies connectivity: highest normalised current across the Land, Water and Air groups in each cell.
+
+### Road and waterway trade-offs
+
+- `output/rasters/road_barrier_severity.tif`: Road barrier severity for wildlife: 1 / (1 + distance to road in km). The closer to a road, the higher the value.
+- `output/rasters/road_access_value.tif`: Eco-tourism access value: proximity kernel (5 km decay) around 6 visitor sites, e.g. Penascosa rock art and river beaches.
+- `output/rasters/road_tradeoff_class.tif`: Road trade-off classes from median splits of barrier severity and access value: conservation priority, compatible access or conflict.
+- `output/rasters/waterway_barrier_severity.tif`: Waterway barrier severity, taken from the Water group resistance surface (includes field-recorded dams, weirs and culverts).
+- `output/rasters/waterway_access_value.tif`: Waterway access value: proximity kernel around the same visitor sites, most of them river beaches (praias fluviais).
+- `output/rasters/waterway_tradeoff_class.tif`: Waterway trade-off classes from median splits of barrier severity and access value: conservation priority, compatible access or conflict.
+
 ## Limits of the bundle
 
 What you can do with it, with `RUN_PIPELINE = False`:
@@ -51,7 +104,7 @@ What you cannot do:
 
 (iv) Treat the layers as final evidence. They come from a single-model, single-parameter run with no uncertainty, over one 30 km study area, with field data from one trip (see Flaws below).
 
-(v) Cite it yet. The DOI does not exist until the production deposit, and the demo instance is not persistent.
+(v) Cite it with a DOI. data.gouv.fr does not issue DOIs, so cite the dataset URL on data.gouv.fr instead.
 
 ## Flaws
 
@@ -61,7 +114,13 @@ What you cannot do:
 
 (ii) **Test result.** Clean clone, bundle unzipped over it, `data-management` folder hidden, network off: with `RUN_PIPELINE = False` the notebook runs with zero error cells. With `True` the same six cells fail as before, which confirms the switch controls them. Note that `nbconvert --execute` reports success even when cells error, so check cell outputs for `error` entries, not the exit code.
 
-(iii) **Still to do:** commit and push the notebook, `acquire_reserves_and_hunting_zones.py` and `environment.yml`, otherwise collaborators cloning GitHub get the old notebook.
+(iii) **Done:** the notebook, `acquire_reserves_and_hunting_zones.py` and `environment.yml` are on `main`, so collaborators cloning GitHub get the notebook with the switch.
+
+### Before or just after upload (2026-09-26)
+
+(iii-a) **`README.txt` still points to Recherche Data Gouv.** Its "How to cite" section needs to say data.gouv.fr, with the dataset URL in place of the DOI placeholder.
+
+(iii-b) **`field_observations.gpkg` checked again before publishing:** no wildcat or other sensitive-species records, and no site flagged sensitive.
 
 ### Reproducibility
 
@@ -85,8 +144,8 @@ What you cannot do:
 
 ### Licence and provenance
 
-(xii) Etalab 2.0 is applied to a bundle derived partly from OpenStreetMap (ODbL, share-alike, for the Côa centreline and the Faia Brava boundary). Whether Etalab 2.0 is compatible with that, and with the ICNF and heritage-service terms, has not been checked.
+(xii) Etalab 2.0 is applied to a bundle derived partly from OpenStreetMap (ODbL, share-alike, for the Côa centreline and the Faia Brava boundary). Decision on 2026-09-26: the OpenStreetMap-derived files (`land_tenure.gpkg`, `study_area.gpkg`, the road layers) stay under ODbL, and the dataset description on data.gouv.fr must say so. Compatibility with the ICNF and heritage-service terms has still not been checked. GBIF records are not in the bundle.
 
 (xiii) The README names Copernicus land cover and imperviousness as sources, but those layers are not shipped, only surfaces derived from them.
 
-(xiv) The demo instance (demo.recherche.data.gouv.fr) is a test environment. Its DOI is not a persistent citation. The README's "How to cite" line stays empty until the production deposit.
+(xiv) The demo instance (demo.recherche.data.gouv.fr) was a test environment and its DOI is not a persistent citation. It is superseded by the data.gouv.fr deposit (see "Where it is published").
