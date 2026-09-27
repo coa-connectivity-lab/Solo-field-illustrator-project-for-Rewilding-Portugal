@@ -68,5 +68,5 @@ __pycache__/
 storyMaps/*.pdf
 survey123/*design*.pdf
 GeoAI/**/*.pdf
-# --- Private studies (kept local, not published) ---
-research/rewilding-dynamics/
+# --- Consensus search notes: personal, non-commercial use only, not redistributed ---
+research/rewilding-dynamics/notes/*.md
