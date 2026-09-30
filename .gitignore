@@ -70,3 +70,8 @@ survey123/*design*.pdf
 GeoAI/**/*.pdf
 # --- Consensus search notes: personal, non-commercial use only, not redistributed ---
 research/rewilding-dynamics/notes/*.md
+
+# --- Côa river line check: small (~1 MB) inputs/outputs kept so the QGIS project opens from a clone ---
+!global-artivism/coa-river-check/**/*.gpkg
+!global-artivism/coa-river-check/**/*.geojson
+!global-artivism/coa-river-check/**/*.pgw

@@ -1,0 +1,36 @@
+group,metric,value,note
+image,movement: pixel→bundle mean distance (m),49.7,
+image,movement: pixel→bundle 99th pct distance (m),109.0,
+image,movement: bundle river drawn (share within 150 m),1.0,
+image,water: pixel→bundle mean distance (m),48.0,
+image,water: pixel→bundle 99th pct distance (m),105.0,
+image,water: bundle river drawn (share within 150 m),1.0,
+image,connection: pixel→bundle mean distance (m),50.7,
+image,connection: pixel→bundle 99th pct distance (m),111.1,
+image,connection: bundle river drawn (share within 150 m),1.0,
+osm,bundle ways,31,
+osm,fresh OSM ways,31,
+osm,way IDs only in bundle,0,
+osm,way IDs only in fresh OSM,0,
+osm,bundle length (km),143.7,
+osm,fresh OSM length (km),143.7,
+osm,Hausdorff bundle↔OSM (m),0.0,
+hydrorivers,main stem length (km),130.4,"15 arc-sec network, generalised"
+hydrorivers,OSM→HydroRIVERS mean distance (m),101.4,
+hydrorivers,OSM→HydroRIVERS 95th pct distance (m),251.5,
+gaps,connected pieces after merge,3,
+gaps,gap length (m),16.5,"at 40.80271 N, -7.01870 E"
+gaps,gap length (m),241.4,"at 40.33560 N, -7.09263 E"
+gaps,piece length (km),70.48,
+gaps,piece length (km),42.89,
+gaps,piece length (km),30.29,
+ends,south end latitude,40.2732,"source, Serra da Malcata ~40.27 N"
+ends,north end latitude,41.0825,mouth near Vila Nova de Foz Côa ~41.08 N
+ends,north end → OSM Douro distance (m),0.0,
+raster,movement: on-river mean / raster mean (no shift),0.98,
+raster,"movement: best shift dx,dy (m)","-5000,5000",ratio 0.99
+raster,water: on-river mean / raster mean (no shift),1.05,
+raster,"water: best shift dx,dy (m)","0,0",ratio 1.05
+raster,connection: on-river mean / raster mean (no shift),1.1,
+raster,"connection: best shift dx,dy (m)","0,0",ratio 1.10
+north,"true north vs grid up (deg, + = clockwise)",11.86,centre 40.666 N -7.064 E
