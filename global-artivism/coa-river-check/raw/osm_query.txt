@@ -1,0 +1,7 @@
+Downloaded: 2026-09-30T07:49:21+00:00
+
+[coa] 31 ways, served by https://overpass-api.de/api/interpreter
+[out:json][timeout:120];way["waterway"="river"]["name"~"C[oô]a$"](40.2,-7.3,41.2,-6.7);out geom tags;
+
+[douro] 21 ways, served by https://overpass-api.de/api/interpreter
+[out:json][timeout:120];way["waterway"="river"]["name"~"Douro"](40.2,-7.3,41.2,-6.7);out geom tags;
